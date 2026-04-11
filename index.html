@@ -3,191 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="theme-color" content="#0B1120">
+<meta name="theme-color" content="#F0F4F8">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="ALMACEN">
 <title>Almacén Farmacia — HM La Portada</title>
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:#0B1120; --surface:#131A2E; --surface2:#1C2540; --border:#253058;
-    --accent:#2B7FFF; --accent2:#5BA3FF;
-    --text:#FFFFFF; --text2:#FFFFFF; --text3:#8898C0;
-    --red:#FF4444; --red-bg:#1A0808; --red-border:#5A1010;
-    --yellow:#FFB800; --yellow-bg:#1A1500; --yellow-border:#5A4200;
-    --green:#00CC66; --green-bg:#041A0F; --green-border:#0A5A2A;
-    --gray:#4A5880; --gray-bg:#131A2E; --gray-border:#253058;
-    --radius:14px; --radius-sm:9px;
+    --bg: #F0F4F8;
+    --surface: #FFFFFF;
+    --surface2: #F7F9FC;
+    --border: #D8E0EA;
+    --accent: #1A6BCC;
+    --text: #111827;
+    --text2: #374151;
+    --text3: #6B7280;
+    --red: #CC1F1F;
+    --red-bg: #FEF2F2;
+    --red-border: #FECACA;
+    --red-bar: #EF4444;
+    --yellow: #B45309;
+    --yellow-bg: #FFFBEB;
+    --yellow-border: #FDE68A;
+    --yellow-bar: #F59E0B;
+    --green: #15803D;
+    --green-bg: #F0FDF4;
+    --green-border: #BBF7D0;
+    --green-bar: #22C55E;
+    --gray: #6B7280;
+    --gray-bg: #F9FAFB;
+    --gray-border: #E5E7EB;
+    --gray-bar: #9CA3AF;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 1px 4px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
   }
-  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px}
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html, body { height:100%; overflow:hidden; background:var(--bg); color:var(--text); font-family:'Nunito',Arial,sans-serif; }
 
-  /* ─── AUTH LOADING ─── */
-  #authLoading{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#8898C0}
-  #authLoading.hidden{display:none}
+  /* Números siempre con fuente clásica sin cero rayado */
+  .num { font-family: Arial, Helvetica, sans-serif; }
 
-  /* ─── LOGIN ─── */
-  #loginScreen{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;overflow-y:auto}
-  #loginScreen.hidden{display:none}
-  .login-logo-wrap{width:88px;height:88px;margin-bottom:18px}
-  .login-logo-wrap img{width:100%;height:100%;object-fit:contain;border-radius:20px}
-  .login-logo-fallback{width:88px;height:88px;background:linear-gradient(135deg,#0D3A8A,#1A6BFF);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:44px;margin-bottom:18px;box-shadow:0 8px 28px rgba(43,127,255,0.4)}
-  .login-title{font-size:24px;font-weight:700;text-align:center;letter-spacing:-0.3px;margin-bottom:3px}
-  .login-sub{font-size:12px;color:#8898C0;text-align:center;line-height:1.6;margin-bottom:32px}
-  .login-box{width:100%;max-width:360px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px}
-  .login-label{font-size:11px;color:#8898C0;text-transform:uppercase;letter-spacing:0.9px;margin-bottom:7px;display:block;font-weight:600}
-  .login-field{margin-bottom:16px}
-  .login-input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px 14px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
-  .login-input:focus{border-color:var(--accent)}
-  .login-btn{width:100%;background:linear-gradient(135deg,#1565D8,#2B7FFF);color:#fff;border:none;border-radius:var(--radius-sm);padding:14px;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;margin-top:4px;letter-spacing:0.3px;transition:opacity .2s,transform .1s;box-shadow:0 4px 16px rgba(43,127,255,0.4)}
-  .login-btn:active{transform:scale(0.98)}
-  .login-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
-  .login-error{color:var(--red);font-size:12px;text-align:center;margin-top:12px;min-height:16px;line-height:1.4}
-  .login-hospital{font-size:11px;color:#4A5880;text-align:center;margin-top:24px}
+  /* ── AUTH LOADING ── */
+  #authLoading { position:fixed; inset:0; z-index:999; background:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+  #authLoading.hidden { display:none; }
 
-  /* ─── MAIN APP ─── */
-  #mainApp{display:none;flex-direction:column;height:100%}
-  #mainApp.visible{display:flex}
+  /* ── LOGIN ── */
+  #loginScreen { position:fixed; inset:0; z-index:1000; background:#F0F4F8; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:28px 20px; overflow-y:auto; }
+  #loginScreen.hidden { display:none; }
+  .login-logo { width:90px; height:90px; margin-bottom:16px; border-radius:20px; overflow:hidden; box-shadow:var(--shadow-md); }
+  .login-logo img { width:100%; height:100%; object-fit:contain; background:#fff; }
+  .login-title { font-size:24px; font-weight:800; color:var(--text); text-align:center; margin-bottom:4px; }
+  .login-sub { font-size:13px; color:var(--text3); text-align:center; line-height:1.6; margin-bottom:28px; }
+  .login-box { width:100%; max-width:360px; background:#fff; border:1px solid var(--border); border-radius:16px; padding:24px; box-shadow:var(--shadow-md); }
+  .login-label { font-size:12px; color:var(--text2); font-weight:700; margin-bottom:6px; display:block; }
+  .login-field { margin-bottom:16px; }
+  .login-input { width:100%; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:12px 14px; color:var(--text); font-size:15px; font-family:'Nunito',Arial,sans-serif; outline:none; transition:border-color .2s; }
+  .login-input:focus { border-color:var(--accent); }
+  .login-btn { width:100%; background:var(--accent); color:#fff; border:none; border-radius:var(--radius-sm); padding:13px; font-size:15px; font-weight:700; font-family:'Nunito',Arial,sans-serif; cursor:pointer; margin-top:4px; transition:opacity .2s; box-shadow:0 4px 12px rgba(26,107,204,0.3); }
+  .login-btn:active { opacity:0.88; }
+  .login-btn:disabled { opacity:0.5; cursor:not-allowed; }
+  .login-error { color:var(--red); font-size:12px; text-align:center; margin-top:10px; min-height:16px; }
+  .login-footer { font-size:11px; color:var(--text3); text-align:center; margin-top:20px; }
+
+  /* ── MAIN APP ── */
+  #mainApp { display:none; flex-direction:column; height:100%; }
+  #mainApp.visible { display:flex; }
 
   /* USER BAR */
-  .user-bar{display:flex;align-items:center;gap:8px;padding:5px 14px;background:var(--surface);border-bottom:1px solid var(--border);font-size:11px;color:#4A5880}
-  .user-bar-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
-  .user-bar-email{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#8898C0}
-  .logout-btn{background:none;border:1px solid var(--border);color:#4A5880;border-radius:6px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:'Inter',sans-serif;flex-shrink:0;transition:all .2s}
-  .logout-btn:hover{border-color:var(--red);color:var(--red)}
+  .user-bar { display:flex; align-items:center; gap:8px; padding:5px 14px; background:#fff; border-bottom:1px solid var(--border); font-size:11px; color:var(--text3); }
+  .user-dot { width:7px; height:7px; border-radius:50%; background:var(--green-bar); flex-shrink:0; }
+  .user-email { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--text2); font-weight:600; }
+  .logout-btn { background:none; border:1px solid var(--border); color:var(--text3); border-radius:6px; padding:3px 10px; font-size:11px; cursor:pointer; font-family:'Nunito',Arial,sans-serif; flex-shrink:0; }
 
   /* HEADER */
-  #header{background:linear-gradient(180deg,#0D1830 0%,#0B1120 100%);border-bottom:1px solid var(--border);padding:10px 14px 0;flex-shrink:0}
-  .header-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-  .app-logo{width:44px;height:44px;flex-shrink:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(43,127,255,0.35)}
-  .app-logo img{width:100%;height:100%;object-fit:cover}
-  .app-logo-fallback{width:44px;height:44px;background:linear-gradient(135deg,#0D3A8A,#2B7FFF);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 4px 14px rgba(43,127,255,0.35)}
-  .header-titles{flex:1;min-width:0}
-  .app-title{font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.2px;line-height:1.2}
-  .app-subtitle{font-size:10px;color:#8898C0;line-height:1.3}
-  .app-creator{font-size:9px;color:#4A5880;line-height:1.3}
-  .header-right{text-align:right;flex-shrink:0}
-  .update-time{font-size:10px;color:#4A5880;font-family:'Roboto Mono',monospace}
+  #header { background:#fff; border-bottom:1px solid var(--border); padding:10px 14px 0; flex-shrink:0; box-shadow:var(--shadow); }
+  .header-top { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .app-logo { width:46px; height:46px; flex-shrink:0; border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
+  .app-logo img { width:100%; height:100%; object-fit:contain; background:#fff; }
+  .header-titles { flex:1; min-width:0; }
+  .app-title { font-size:16px; font-weight:800; color:var(--text); letter-spacing:-0.2px; line-height:1.2; }
+  .app-subtitle { font-size:10px; color:var(--text3); line-height:1.4; }
+  .app-creator { font-size:9px; color:#9CA3AF; }
+  .header-right { text-align:right; flex-shrink:0; }
+  .update-time { font-size:10px; color:var(--text3); font-family:Arial,sans-serif; }
 
   /* SEARCH */
-  .search-wrap{position:relative;margin-bottom:10px}
-  .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#4A5880;pointer-events:none}
-  #searchInput{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 36px 10px 38px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
-  #searchInput:focus{border-color:var(--accent)}
-  #searchInput::placeholder{color:#4A5880}
-  .clear-btn{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#4A5880;cursor:pointer;display:none;font-size:16px;line-height:1}
+  .search-wrap { position:relative; margin-bottom:10px; }
+  .search-icon { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text3); pointer-events:none; }
+  #searchInput { width:100%; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius); padding:10px 36px 10px 38px; color:var(--text); font-size:15px; font-family:'Nunito',Arial,sans-serif; outline:none; transition:border-color .2s; }
+  #searchInput:focus { border-color:var(--accent); }
+  #searchInput::placeholder { color:#9CA3AF; }
+  .clear-btn { position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--text3); cursor:pointer; display:none; font-size:16px; }
 
   /* TABS */
-  .tabs-wrap{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
-  .tabs-wrap::-webkit-scrollbar{display:none}
-  .tab{flex-shrink:0;padding:6px 13px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:#8898C0;transition:all .2s;font-family:'Inter',sans-serif}
-  .tab.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(43,127,255,0.4)}
-  .tab.t-red.active{background:var(--red);border-color:var(--red);box-shadow:0 2px 10px rgba(255,68,68,0.4)}
-  .tab.t-yellow.active{background:var(--yellow);border-color:var(--yellow);color:#000;box-shadow:0 2px 10px rgba(255,184,0,0.4)}
-  .tab.t-green.active{background:var(--green);border-color:var(--green);color:#000;box-shadow:0 2px 10px rgba(0,204,102,0.4)}
+  .tabs-wrap { display:flex; gap:6px; overflow-x:auto; padding-bottom:2px; scrollbar-width:none; }
+  .tabs-wrap::-webkit-scrollbar { display:none; }
+  .tab { flex-shrink:0; padding:6px 13px; border-radius:20px; font-size:12px; font-weight:700; cursor:pointer; border:1px solid var(--border); background:var(--surface2); color:var(--text2); transition:all .2s; font-family:'Nunito',Arial,sans-serif; }
+  .tab.active { background:var(--accent); border-color:var(--accent); color:#fff; box-shadow:0 2px 8px rgba(26,107,204,0.3); }
+  .tab.t-red.active { background:var(--red); border-color:var(--red); color:#fff; }
+  .tab.t-yellow.active { background:#D97706; border-color:#D97706; color:#fff; }
+  .tab.t-green.active { background:var(--green); border-color:var(--green); color:#fff; }
 
   /* STATS */
-  #statsBar{display:flex;gap:7px;padding:8px 14px;background:var(--bg);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;flex-shrink:0}
-  #statsBar::-webkit-scrollbar{display:none}
-  .stat-pill{display:flex;align-items:center;gap:5px;background:var(--surface);border-radius:20px;padding:5px 11px;font-size:11px;flex-shrink:0;border:1px solid var(--border)}
-  .stat-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-  .stat-pill strong{color:#fff}
-  .stat-pill span{color:#8898C0}
+  #statsBar { display:flex; gap:7px; padding:8px 14px; background:var(--bg); border-bottom:1px solid var(--border); overflow-x:auto; scrollbar-width:none; flex-shrink:0; }
+  #statsBar::-webkit-scrollbar { display:none; }
+  .stat-pill { display:flex; align-items:center; gap:5px; background:#fff; border-radius:20px; padding:5px 11px; font-size:11px; flex-shrink:0; border:1px solid var(--border); box-shadow:var(--shadow); }
+  .stat-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+  .stat-pill strong { color:var(--text); font-family:Arial,sans-serif; }
+  .stat-pill span { color:var(--text3); }
 
   /* LIST */
-  #listWrap{overflow-y:auto;flex:1;padding:6px 12px 80px}
-  #listWrap::-webkit-scrollbar{width:3px}
-  #listWrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+  #listWrap { overflow-y:auto; flex:1; padding:8px 12px 80px; }
+  #listWrap::-webkit-scrollbar { width:3px; }
+  #listWrap::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
 
-  /* LOTE CARD — one per row */
-  .lote-card{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    margin-bottom:7px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:border-color .15s, transform .1s;
-    position:relative;
-  }
-  .lote-card:active{transform:scale(0.99)}
-  .lote-card.expanded{border-color:var(--accent)}
-  .lc-bar{position:absolute;left:0;top:0;bottom:0;width:5px;border-radius:14px 0 0 14px}
-  .lc-bar-red{background:var(--red)}
-  .lc-bar-yellow{background:var(--yellow)}
-  .lc-bar-green{background:var(--green)}
-  .lc-bar-gray{background:var(--gray)}
+  /* LOTE CARD */
+  .lote-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius); margin-bottom:8px; overflow:hidden; cursor:pointer; transition:box-shadow .2s, transform .1s; position:relative; box-shadow:var(--shadow); }
+  .lote-card:active { transform:scale(0.99); }
+  .lote-card.expanded { border-color:var(--accent); box-shadow:var(--shadow-md); }
 
-  .lc-main{padding:11px 11px 11px 18px;display:flex;align-items:center;gap:10px}
-  .lc-info{flex:1;min-width:0}
-  .lc-name{font-size:14px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px;font-family:'Inter',sans-serif}
-  .lc-meta{font-size:12px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
-  .lc-lote{font-size:10px;color:#8898C0;margin-top:2px;font-family:'Roboto Mono',monospace}
-  .lc-right{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
-  .fecha-badge{font-size:11px;font-weight:700;font-family:'Roboto Mono',monospace;padding:3px 9px;border-radius:7px;letter-spacing:0.3px}
-  .fb-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
-  .fb-yellow{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-border)}
-  .fb-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
-  .fb-gray{background:var(--gray-bg);color:var(--gray);border:1px solid var(--gray-border)}
-  .lc-stock{font-size:14px;font-weight:700;color:#FFB800;font-family:'Roboto Mono',monospace}
-  .lc-stock-label{font-size:9px;color:#4A5880;font-weight:400}
-  .chevron{width:18px;height:18px;color:#4A5880;transition:transform .25s;flex-shrink:0}
-  .lote-card.expanded .chevron{transform:rotate(180deg)}
+  .lc-bar { position:absolute; left:0; top:0; bottom:0; width:5px; border-radius:12px 0 0 12px; }
+  .lc-bar-red { background:var(--red-bar); }
+  .lc-bar-yellow { background:var(--yellow-bar); }
+  .lc-bar-green { background:var(--green-bar); }
+  .lc-bar-gray { background:var(--gray-bar); }
+
+  .lc-main { padding:11px 11px 11px 18px; display:flex; align-items:center; gap:10px; }
+  .lc-info { flex:1; min-width:0; }
+  .lc-name { font-size:14px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:2px; }
+  .lc-meta { font-size:12px; color:var(--text2); font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .lc-lote { font-size:12px; color:var(--text); font-weight:600; margin-top:3px; font-family:Arial,sans-serif; }
+
+  .lc-right { text-align:right; flex-shrink:0; display:flex; flex-direction:column; align-items:flex-end; gap:3px; }
+
+  .fecha-badge { font-size:12px; font-weight:700; font-family:Arial,Helvetica,sans-serif; padding:3px 9px; border-radius:7px; }
+  .fb-red { background:var(--red-bg); color:var(--red); border:1px solid var(--red-border); }
+  .fb-yellow { background:var(--yellow-bg); color:var(--yellow); border:1px solid var(--yellow-border); }
+  .fb-green { background:var(--green-bg); color:var(--green); border:1px solid var(--green-border); }
+  .fb-gray { background:var(--gray-bg); color:var(--gray); border:1px solid var(--gray-border); }
+
+  .lc-stock { font-size:18px; font-weight:800; color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.1; }
+  .lc-stock-label { font-size:9px; color:var(--text3); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; }
+
+  .chevron { width:18px; height:18px; color:var(--text3); transition:transform .25s; flex-shrink:0; }
+  .lote-card.expanded .chevron { transform:rotate(180deg); }
 
   /* DETAIL PANEL */
-  .detail-panel{display:none;border-top:1px solid var(--border);padding:12px 16px 14px}
-  .lote-card.expanded .detail-panel{display:block}
+  .detail-panel { display:none; border-top:1px solid var(--border); padding:12px 16px 14px; background:var(--surface2); }
+  .lote-card.expanded .detail-panel { display:block; }
+  .detail-title { font-size:11px; font-weight:700; letter-spacing:0.8px; color:var(--text3); text-transform:uppercase; margin-bottom:10px; }
 
-  .detail-title{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#4A5880;text-transform:uppercase;margin-bottom:10px;padding-top:2px}
+  .detail-lote-row { display:flex; align-items:center; gap:8px; padding:9px 11px; background:#fff; border-radius:var(--radius-sm); margin-bottom:6px; border:1px solid var(--border); }
+  .dl-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+  .dl-info { flex:1; min-width:0; }
+  .dl-lote { font-size:13px; font-family:Arial,Helvetica,sans-serif; color:var(--text); font-weight:700; }
+  .dl-fecha { font-size:12px; color:var(--text2); font-family:Arial,Helvetica,sans-serif; font-weight:600; }
+  .dl-stock { font-size:16px; font-weight:800; font-family:Arial,Helvetica,sans-serif; color:var(--text); }
 
-  .detail-lote-row{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:6px;border:1px solid var(--border)}
-  .dl-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-  .dl-info{flex:1;min-width:0}
-  .dl-lote{font-size:12px;font-family:'Roboto Mono',monospace;color:#fff;font-weight:500}
-  .dl-fecha{font-size:11px;color:#8898C0}
-  .dl-stock{font-size:14px;font-weight:700;font-family:'Roboto Mono',monospace;color:#fff}
+  .detail-total { display:flex; align-items:center; justify-content:space-between; background:var(--accent); border-radius:var(--radius-sm); padding:10px 14px; margin-top:8px; }
+  .detail-total span:first-child { font-size:12px; color:#fff; font-weight:700; letter-spacing:0.5px; }
+  .detail-total span:last-child { font-size:22px; font-weight:800; color:#fff; font-family:Arial,Helvetica,sans-serif; }
 
-  .detail-total{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#0D1F4A,#112466);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:10px 14px;margin-top:8px}
-  .detail-total span:first-child{font-size:12px;color:var(--accent2);font-weight:700;letter-spacing:0.5px}
-  .detail-total span:last-child{font-size:20px;font-weight:700;color:#fff;font-family:'Roboto Mono',monospace}
-
-  .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
-  .dg-cell{background:var(--bg);border-radius:8px;padding:8px 10px;border:1px solid var(--border)}
-  .dg-label{font-size:9px;color:#4A5880;text-transform:uppercase;letter-spacing:0.9px;margin-bottom:3px;font-weight:600}
-  .dg-value{font-size:12px;color:#fff;font-weight:500;line-height:1.3}
-  .dg-cell.full{grid-column:1/-1}
+  .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:10px; }
+  .dg-cell { background:#fff; border-radius:8px; padding:8px 10px; border:1px solid var(--border); }
+  .dg-label { font-size:9px; color:var(--text3); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:3px; font-weight:700; }
+  .dg-value { font-size:12px; color:var(--text); font-weight:600; }
 
   /* EMPTY */
-  .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:220px;color:#4A5880;text-align:center;gap:12px}
-  .empty-state .eicon{font-size:44px}
-  .empty-state p{font-size:13px;line-height:1.5}
+  .empty-state { display:flex; flex-direction:column; align-items:center; justify-content:center; height:220px; color:var(--text3); text-align:center; gap:12px; }
+  .empty-state .eicon { font-size:44px; }
+  .empty-state p { font-size:13px; font-weight:600; }
 
   /* SPINNER */
-  .spinner{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
+  .spinner { width:36px; height:36px; border:3px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin .8s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .load-center { display:flex; flex-direction:column; align-items:center; justify-content:center; height:200px; gap:14px; color:var(--text3); font-size:13px; font-weight:600; }
 
-  .load-center{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:14px;color:#8898C0;font-size:13px}
-
-  @media(min-width:600px){
-    #listWrap{max-width:720px;margin:0 auto;width:100%}
-    #statsBar>*{flex:1;justify-content:center}
+  @media(min-width:600px) {
+    #listWrap { max-width:720px; margin:0 auto; width:100%; }
+    #statsBar { justify-content:center; }
   }
 </style>
 </head>
 <body>
 
+<!-- AUTH LOADING -->
 <div id="authLoading">
   <div class="spinner"></div>
-  <span style="font-size:13px;color:#8898C0">Verificando sesión...</span>
+  <span style="font-size:13px;color:#6B7280;font-weight:600">Verificando sesión...</span>
 </div>
 
 <!-- LOGIN -->
 <div id="loginScreen" class="hidden">
-  <div class="login-logo-fallback" id="loginLogoFallback">
-    <img src="icon-512.png" alt="logo" style="width:100%;height:100%;object-fit:contain;border-radius:20px" onerror="this.parentElement.innerHTML='🏥'">
+  <div class="login-logo">
+    <img src="icon-512.png" alt="logo" onerror="this.src='';this.parentElement.textContent='🏥'">
   </div>
   <div class="login-title">Almacén de Farmacia</div>
   <div class="login-sub">Hospital Municipal La Portada<br>Control de Vencimientos y Stock</div>
@@ -203,21 +217,21 @@
     <button class="login-btn" id="loginBtn">Ingresar al Sistema</button>
     <div class="login-error" id="loginError"></div>
   </div>
-  <div class="login-hospital">🔒 Acceso restringido al personal autorizado</div>
+  <div class="login-footer">🔒 Acceso restringido al personal autorizado</div>
 </div>
 
 <!-- MAIN APP -->
 <div id="mainApp">
   <div class="user-bar">
-    <div class="user-bar-dot"></div>
-    <span class="user-bar-email" id="userEmail">—</span>
+    <div class="user-dot"></div>
+    <span class="user-email" id="userEmail">—</span>
     <button class="logout-btn" id="logoutBtn">Cerrar sesión</button>
   </div>
 
   <div id="header">
     <div class="header-top">
       <div class="app-logo">
-        <img src="icon-192.png" alt="logo" onerror="this.parentElement.outerHTML='<div class=\'app-logo-fallback\'>🏥</div>'">
+        <img src="icon-192.png" alt="logo" onerror="this.parentElement.textContent='🏥'">
       </div>
       <div class="header-titles">
         <div class="app-title">ALMACEN FARMACIA</div>
@@ -226,7 +240,7 @@
       </div>
       <div class="header-right">
         <div class="update-time" id="updateTime">—</div>
-        <div class="update-time" id="totalMeds" style="margin-top:2px;color:#8898C0"></div>
+        <div class="update-time" id="totalMeds" style="margin-top:2px"></div>
       </div>
     </div>
     <div class="search-wrap">
@@ -247,10 +261,10 @@
   </div>
 
   <div id="statsBar">
-    <div class="stat-pill"><div class="stat-dot" style="background:var(--red)"></div><strong id="cRed">-</strong><span>&nbsp;≤6m</span></div>
-    <div class="stat-pill"><div class="stat-dot" style="background:var(--yellow)"></div><strong id="cYellow">-</strong><span>&nbsp;6-12m</span></div>
-    <div class="stat-pill"><div class="stat-dot" style="background:var(--green)"></div><strong id="cGreen">-</strong><span>&nbsp;&gt;12m</span></div>
-    <div class="stat-pill"><div class="stat-dot" style="background:var(--gray)"></div><strong id="cGray">-</strong><span>&nbsp;s/stock</span></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--red-bar)"></div><strong id="cRed">-</strong><span>&nbsp;≤6m</span></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--yellow-bar)"></div><strong id="cYellow">-</strong><span>&nbsp;6-12m</span></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--green-bar)"></div><strong id="cGreen">-</strong><span>&nbsp;&gt;12m</span></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--gray-bar)"></div><strong id="cGray">-</strong><span>&nbsp;s/stock</span></div>
   </div>
 
   <div id="listWrap">
@@ -294,26 +308,33 @@ $('loginBtn').addEventListener('click', async () => {
   const email = $('loginEmail').value.trim();
   const pass  = $('loginPassword').value;
   if (!email || !pass) { $('loginError').textContent = 'Ingresá tu correo y contraseña.'; return; }
-  $('loginBtn').disabled = true; $('loginBtn').textContent = 'Ingresando...'; $('loginError').textContent = '';
+  $('loginBtn').disabled = true;
+  $('loginBtn').textContent = 'Ingresando...';
+  $('loginError').textContent = '';
   try {
     await signInWithEmailAndPassword(auth, email, pass);
   } catch (err) {
-    const msgs = {'auth/invalid-credential':'Correo o contraseña incorrectos.','auth/user-not-found':'Correo no registrado.','auth/wrong-password':'Contraseña incorrecta.','auth/too-many-requests':'Demasiados intentos. Esperá unos minutos.'};
+    const msgs = {
+      'auth/invalid-credential': 'Correo o contraseña incorrectos.',
+      'auth/user-not-found':     'Correo no registrado.',
+      'auth/wrong-password':     'Contraseña incorrecta.',
+      'auth/too-many-requests':  'Demasiados intentos. Esperá unos minutos.'
+    };
     $('loginError').textContent = msgs[err.code] || 'Error al ingresar.';
-    $('loginBtn').disabled = false; $('loginBtn').textContent = 'Ingresar al Sistema';
+    $('loginBtn').disabled = false;
+    $('loginBtn').textContent = 'Ingresar al Sistema';
   }
 });
-[$('loginEmail'),$('loginPassword')].forEach(el => el.addEventListener('keydown', e => { if (e.key==='Enter') $('loginBtn').click(); }));
+[$('loginEmail'), $('loginPassword')].forEach(el =>
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') $('loginBtn').click(); })
+);
 $('logoutBtn').addEventListener('click', () => signOut(auth));
 
-// ══════════════════════════════════════════
+// ══════════════════════════════════════
 // ── INVENTARIO ──
-// ══════════════════════════════════════════
-let allData = []; // array of raw lote records
+// ══════════════════════════════════════
+let allData = [], byCode = {};
 let currentTab = 'all', searchQuery = '';
-
-// Mapa codigo → todos los lotes del mismo medicamento
-let byCode = {};
 
 const MESES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 
@@ -325,15 +346,26 @@ function color(f) {
 
 function fmt(f) {
   if (!f) return 'Sin fecha';
-  const [y,mo] = f.split('-');
-  return MESES[+mo-1]+' '+y;
+  const [y, mo] = f.split('-');
+  return MESES[+mo-1] + ' ' + y;
+}
+
+function dotClr(c) {
+  return c==='red' ? 'var(--red-bar)' : c==='yellow' ? 'var(--yellow-bar)' : c==='green' ? 'var(--green-bar)' : 'var(--gray-bar)';
 }
 
 function buildByCode(data) {
   const map = {};
   for (const r of data) {
-    if (!map[r.codigo]) map[r.codigo] = { medicamento:r.medicamento, forma_farmaceutica:r.forma_farmaceutica, concentracion:r.concentracion, proveedor:r.proveedor, porcentaje_cambio:r.porcentaje_cambio, tiempo_devolucion:r.tiempo_devolucion, año_adquisicion:r.año_adquisicion, tipo_proceso:r.tipo_proceso, lotes:[], total_global:0 };
-    if (r.lote || r.fecha_vencimiento) map[r.codigo].lotes.push({ lote:r.lote, fecha:r.fecha_vencimiento, stock:r.total_por_lote||0 });
+    if (!map[r.codigo]) map[r.codigo] = {
+      medicamento: r.medicamento, forma_farmaceutica: r.forma_farmaceutica,
+      concentracion: r.concentracion, proveedor: r.proveedor,
+      porcentaje_cambio: r.porcentaje_cambio, tiempo_devolucion: r.tiempo_devolucion,
+      año_adquisicion: r.año_adquisicion, tipo_proceso: r.tipo_proceso,
+      lotes: [], total_global: 0
+    };
+    if (r.lote || r.fecha_vencimiento)
+      map[r.codigo].lotes.push({ lote: r.lote, fecha: r.fecha_vencimiento, stock: r.total_por_lote||0 });
     map[r.codigo].total_global += r.total_por_lote||0;
   }
   return map;
@@ -341,51 +373,55 @@ function buildByCode(data) {
 
 function filterRows() {
   let rows = [...allData];
-  const ranges = {AC:['A','C'],DH:['D','H'],IO:['I','O'],PZ:['P','Z']};
+  const ranges = { AC:['A','C'], DH:['D','H'], IO:['I','O'], PZ:['P','Z'] };
+
   if (ranges[currentTab]) {
-    const [f,t] = ranges[currentTab];
-    rows = rows.filter(r => { const l=r.medicamento[0].toUpperCase(); return l>=f&&l<=t; });
+    const [f, t] = ranges[currentTab];
+    rows = rows.filter(r => { const l = r.medicamento[0].toUpperCase(); return l >= f && l <= t; });
   } else if (['red','yellow','green'].includes(currentTab)) {
     rows = rows.filter(r => color(r.fecha_vencimiento) === currentTab);
   }
-  // Exclude rows with no lote AND no date AND no stock for "Todos" (still show in gray tabs if needed)
-  if (currentTab === 'all' || ranges[currentTab]) {
-    // keep all — gray ones (no stock) still show
-  }
+
   if (searchQuery) {
     const q = searchQuery.toLowerCase();
-    rows = rows.filter(r => r.medicamento.toLowerCase().includes(q) || r.codigo.toLowerCase().includes(q) || (r.forma_farmaceutica&&r.forma_farmaceutica.toLowerCase().includes(q)) || (r.concentracion&&r.concentracion.toLowerCase().includes(q)));
+    rows = rows.filter(r =>
+      r.medicamento.toLowerCase().includes(q) ||
+      r.codigo.toLowerCase().includes(q) ||
+      (r.forma_farmaceutica && r.forma_farmaceutica.toLowerCase().includes(q)) ||
+      (r.concentracion && r.concentracion.toLowerCase().includes(q))
+    );
   }
+
   // ── ORDENAMIENTO POR PESTAÑA ──
-  const byFecha = (a,b) => {
-    const fa=a.fecha_vencimiento, fb=b.fecha_vencimiento;
-    if (fa && fb) return new Date(fa)-new Date(fb);
-    if (fa) return -1; if (fb) return 1;
+  const byFecha = (a, b) => {
+    const fa = a.fecha_vencimiento, fb = b.fecha_vencimiento;
+    if (fa && fb) return new Date(fa) - new Date(fb);
+    if (fa) return -1;
+    if (fb) return 1;
     return 0;
   };
-  const byAlfa = (a,b) => a.medicamento.localeCompare(b.medicamento,'es');
+  const byAlfa = (a, b) => a.medicamento.localeCompare(b.medicamento, 'es');
 
   if (currentTab === 'all') {
-    // TODOS: fecha ascendente (del más próximo al más lejano), sin importar color
-    rows.sort((a,b) => byFecha(a,b) || byAlfa(a,b));
-  } else if (['AC','DH','IO','PZ'].includes(currentTab)) {
-    // Pestañas alfabéticas: orden alfabético puro
+    // TODOS: fecha ascendente pura (más próximo primero)
+    rows.sort((a, b) => byFecha(a, b) || byAlfa(a, b));
+  } else if (ranges[currentTab]) {
+    // A-C / D-H / I-O / P-Z: alfabético puro
     rows.sort(byAlfa);
   } else {
-    // Urgente / Próximos / OK: fecha ascendente pura
-    rows.sort((a,b) => byFecha(a,b) || byAlfa(a,b));
+    // Urgente / Próximos / OK: fecha ascendente
+    rows.sort((a, b) => byFecha(a, b) || byAlfa(a, b));
   }
+
   return rows;
 }
 
 function renderStats() {
-  const c={red:0,yellow:0,green:0,gray:0};
+  const c = { red:0, yellow:0, green:0, gray:0 };
   for (const r of allData) c[color(r.fecha_vencimiento)]++;
-  $('cRed').textContent=c.red; $('cYellow').textContent=c.yellow;
-  $('cGreen').textContent=c.green; $('cGray').textContent=c.gray;
+  $('cRed').textContent = c.red; $('cYellow').textContent = c.yellow;
+  $('cGreen').textContent = c.green; $('cGray').textContent = c.gray;
 }
-
-function dotClr(c){ return c==='red'?'var(--red)':c==='yellow'?'var(--yellow)':c==='green'?'var(--green)':'var(--gray)'; }
 
 function renderList() {
   const rows = filterRows();
@@ -400,55 +436,55 @@ function renderList() {
     const c = color(r.fecha_vencimiento);
     const info = byCode[r.codigo];
 
-    // Build detail panel: all lotes of this medicamento
+    // Lotes del mismo medicamento
     let lotesHtml = '';
     if (info && info.lotes.length) {
-      const sorted = [...info.lotes].sort((a,b) => {
-        if (a.fecha&&b.fecha) return new Date(a.fecha)-new Date(b.fecha);
-        return a.fecha?-1:1;
+      const sorted = [...info.lotes].sort((a, b) => {
+        if (a.fecha && b.fecha) return new Date(a.fecha) - new Date(b.fecha);
+        return a.fecha ? -1 : 1;
       });
       for (const l of sorted) {
         const lc = color(l.fecha);
         lotesHtml += `<div class="detail-lote-row">
           <div class="dl-dot" style="background:${dotClr(lc)}"></div>
           <div class="dl-info">
-            <div class="dl-lote">Lote: ${l.lote||'N/A'}</div>
+            <div class="dl-lote">Lote: ${l.lote || 'N/A'}</div>
             <div class="dl-fecha">${fmt(l.fecha)}</div>
           </div>
           <div class="dl-stock">${l.stock.toLocaleString('es')}</div>
         </div>`;
       }
     } else {
-      lotesHtml = `<div style="font-size:12px;color:#4A5880;font-style:italic;padding:6px 0">Sin lotes registrados</div>`;
+      lotesHtml = `<div style="font-size:12px;color:var(--text3);font-style:italic;padding:6px 0">Sin lotes registrados</div>`;
     }
 
-    // Extra info grid
+    // Info extra
     const extras = [
-      ['Código', r.codigo],
-      ['Proveedor', r.proveedor],
-      ['% Cambio/Dev.', r.porcentaje_cambio],
-      ['Tiempo Dev.', r.tiempo_devolucion],
-      ['Año Adquisición', r.año_adquisicion],
-      ['Tipo Proceso', r.tipo_proceso],
-    ].filter(([,v]) => v && v!=='nan' && v!=='null' && v!=='None');
+      ['Código', r.codigo], ['Proveedor', r.proveedor],
+      ['% Cambio/Dev.', r.porcentaje_cambio], ['Tiempo Dev.', r.tiempo_devolucion],
+      ['Año Adquisición', r.año_adquisicion], ['Tipo Proceso', r.tipo_proceso]
+    ].filter(([, v]) => v && v !== 'nan' && v !== 'null' && v !== 'None');
 
     const gridHtml = extras.length
-      ? `<div class="detail-grid">${extras.map(([l,v]) => `<div class="dg-cell"><div class="dg-label">${l}</div><div class="dg-value">${v}</div></div>`).join('')}</div>`
+      ? `<div class="detail-grid">${extras.map(([l, v]) =>
+          `<div class="dg-cell"><div class="dg-label">${l}</div><div class="dg-value">${v}</div></div>`
+        ).join('')}</div>`
       : '';
 
-    const totalGlobal = info ? info.total_global : (r.total_por_lote||0);
+    const totalGlobal = info ? info.total_global : (r.total_por_lote || 0);
+    const loteTexto = r.lote ? 'Lote: ' + r.lote : 'Sin lote';
 
-    html += `<div class="lote-card" data-codigo="${r.codigo}" data-lote="${r.lote||''}">
+    html += `<div class="lote-card">
       <div class="lc-bar lc-bar-${c}"></div>
       <div class="lc-main">
         <div class="lc-info">
           <div class="lc-name">${r.medicamento}</div>
-          <div class="lc-meta">${r.forma_farmaceutica||'—'} · ${r.concentracion||'—'}</div>
-          <div class="lc-lote">${r.lote ? 'Lote: '+r.lote : 'Sin lote'}</div>
+          <div class="lc-meta">${r.forma_farmaceutica || '—'} · ${r.concentracion || '—'}</div>
+          <div class="lc-lote">${loteTexto}</div>
         </div>
         <div class="lc-right">
           <span class="fecha-badge fb-${c}">${fmt(r.fecha_vencimiento)}</span>
-          <span class="lc-stock">${(r.total_por_lote||0).toLocaleString('es')}</span>
+          <span class="lc-stock">${(r.total_por_lote || 0).toLocaleString('es')}</span>
           <span class="lc-stock-label">unidades</span>
         </div>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -470,7 +506,10 @@ function renderList() {
     card.addEventListener('click', () => {
       const was = card.classList.contains('expanded');
       wrap.querySelectorAll('.lote-card.expanded').forEach(c => c.classList.remove('expanded'));
-      if (!was) { card.classList.add('expanded'); setTimeout(() => card.scrollIntoView({behavior:'smooth',block:'nearest'}), 60); }
+      if (!was) {
+        card.classList.add('expanded');
+        setTimeout(() => card.scrollIntoView({ behavior:'smooth', block:'nearest' }), 60);
+      }
     });
   });
 }
@@ -484,19 +523,20 @@ $('tabsWrap').addEventListener('click', e => {
 
 // SEARCH
 const si = $('searchInput'), cb = $('clearBtn');
-si.addEventListener('input', () => { searchQuery=si.value.trim(); cb.style.display=searchQuery?'block':'none'; renderList(); });
-cb.addEventListener('click', () => { si.value=''; searchQuery=''; cb.style.display='none'; renderList(); });
+si.addEventListener('input', () => { searchQuery = si.value.trim(); cb.style.display = searchQuery ? 'block' : 'none'; renderList(); });
+cb.addEventListener('click', () => { si.value = ''; searchQuery = ''; cb.style.display = 'none'; renderList(); });
 
 // LOAD DATA
 async function loadData() {
   try {
-    const res = await fetch('farmacheck.json?v='+Date.now());
+    const res = await fetch('farmacheck.json?v=' + Date.now());
     allData = await res.json();
     byCode = buildByCode(allData);
     const now = new Date();
-    $('updateTime').textContent = 'Act: '+now.toLocaleDateString('es',{day:'2-digit',month:'2-digit',year:'2-digit'});
-    $('totalMeds').textContent = Object.keys(byCode).length+' medicamentos · '+allData.filter(r=>r.fecha_vencimiento).length+' lotes';
-    renderStats(); renderList();
+    $('updateTime').textContent = 'Act: ' + now.toLocaleDateString('es', { day:'2-digit', month:'2-digit', year:'2-digit' });
+    $('totalMeds').textContent = Object.keys(byCode).length + ' med · ' + allData.filter(r => r.fecha_vencimiento).length + ' lotes';
+    renderStats();
+    renderList();
   } catch(e) {
     $('listWrap').innerHTML = `<div class="empty-state"><div class="eicon">⚠️</div><p>Error al cargar datos.<br>Verificá la conexión.</p></div>`;
   }
@@ -504,7 +544,7 @@ async function loadData() {
 
 // SERVICE WORKER
 if ('serviceWorker' in navigator)
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
 </script>
 </body>
 </html>
