@@ -356,26 +356,24 @@ function filterRows() {
     const q = searchQuery.toLowerCase();
     rows = rows.filter(r => r.medicamento.toLowerCase().includes(q) || r.codigo.toLowerCase().includes(q) || (r.forma_farmaceutica&&r.forma_farmaceutica.toLowerCase().includes(q)) || (r.concentracion&&r.concentracion.toLowerCase().includes(q)));
   }
-  // Ordenamiento según pestaña
-  const prioridad = {red:0, yellow:1, green:2, gray:3};
+  // ── ORDENAMIENTO POR PESTAÑA ──
+  const byFecha = (a,b) => {
+    const fa=a.fecha_vencimiento, fb=b.fecha_vencimiento;
+    if (fa && fb) return new Date(fa)-new Date(fb);
+    if (fa) return -1; if (fb) return 1;
+    return 0;
+  };
+  const byAlfa = (a,b) => a.medicamento.localeCompare(b.medicamento,'es');
+
   if (currentTab === 'all') {
-    // TODOS: rojo → amarillo → verde → gris, dentro de cada grupo por fecha ASC
-    rows.sort((a,b) => {
-      const ca = color(a.fecha_vencimiento), cb = color(b.fecha_vencimiento);
-      if (prioridad[ca] !== prioridad[cb]) return prioridad[ca] - prioridad[cb];
-      const fa = a.fecha_vencimiento, fb = b.fecha_vencimiento;
-      if (fa && fb) return new Date(fa) - new Date(fb);
-      if (fa) return -1; if (fb) return 1;
-      return a.medicamento.localeCompare(b.medicamento,'es');
-    });
+    // TODOS: fecha ascendente (del más próximo al más lejano), sin importar color
+    rows.sort((a,b) => byFecha(a,b) || byAlfa(a,b));
+  } else if (['AC','DH','IO','PZ'].includes(currentTab)) {
+    // Pestañas alfabéticas: orden alfabético puro
+    rows.sort(byAlfa);
   } else {
-    // Otras pestañas: por fecha ASC
-    rows.sort((a,b) => {
-      const fa = a.fecha_vencimiento, fb = b.fecha_vencimiento;
-      if (fa && fb) return new Date(fa) - new Date(fb);
-      if (fa) return -1; if (fb) return 1;
-      return a.medicamento.localeCompare(b.medicamento,'es');
-    });
+    // Urgente / Próximos / OK: fecha ascendente pura
+    rows.sort((a,b) => byFecha(a,b) || byAlfa(a,b));
   }
   return rows;
 }
