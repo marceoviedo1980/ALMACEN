@@ -3,146 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="theme-color" content="#C17F2A">
+<meta name="theme-color" content="#0B1120">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="FarmaCheck">
-<title>FarmaCheck — Vencimientos y Stock</title>
+<meta name="apple-mobile-web-app-title" content="ALMACEN">
+<title>Almacén Farmacia — HM La Portada</title>
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:#0F1117; --surface:#1A1D27; --surface2:#222636; --border:#2E3347;
-    --accent:#C17F2A; --accent2:#E8A83E; --text:#F0F2FF; --text2:#8891B0; --text3:#555F7A;
-    --red:#E84040; --red-bg:#2A1010; --red-border:#5A1A1A;
-    --yellow:#F5C842; --yellow-bg:#2A2310; --yellow-border:#5A4A10;
-    --green:#2ECC71; --green-bg:#0F2A1A; --green-border:#1A5A2A;
-    --gray:#555F7A; --gray-bg:#1A1D27; --gray-border:#2E3347;
-    --radius:12px; --radius-sm:8px;
+    --bg:#0B1120; --surface:#131A2E; --surface2:#1C2540; --border:#253058;
+    --accent:#2B7FFF; --accent2:#5BA3FF;
+    --text:#FFFFFF; --text2:#FFFFFF; --text3:#8898C0;
+    --red:#FF4444; --red-bg:#1A0808; --red-border:#5A1010;
+    --yellow:#FFB800; --yellow-bg:#1A1500; --yellow-border:#5A4200;
+    --green:#00CC66; --green-bg:#041A0F; --green-border:#0A5A2A;
+    --gray:#4A5880; --gray-bg:#131A2E; --gray-border:#253058;
+    --radius:14px; --radius-sm:9px;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Sora',sans-serif}
+  html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px}
 
-  /* AUTH LOADING */
-  #authLoading{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:var(--text2);font-size:13px}
+  /* ─── AUTH LOADING ─── */
+  #authLoading{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#8898C0}
   #authLoading.hidden{display:none}
 
-  /* LOGIN */
-  #loginScreen{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px}
+  /* ─── LOGIN ─── */
+  #loginScreen{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;overflow-y:auto}
   #loginScreen.hidden{display:none}
-  .login-logo{width:80px;height:80px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:40px;margin-bottom:20px;box-shadow:0 8px 32px rgba(193,127,42,0.4)}
-  .login-title{font-size:26px;font-weight:700;margin-bottom:4px;text-align:center}
-  .login-sub{font-size:12px;color:var(--text2);margin-bottom:36px;text-align:center;line-height:1.6}
-  .login-box{width:100%;max-width:360px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px}
-  .login-label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;display:block;font-weight:600}
+  .login-logo-wrap{width:88px;height:88px;margin-bottom:18px}
+  .login-logo-wrap img{width:100%;height:100%;object-fit:contain;border-radius:20px}
+  .login-logo-fallback{width:88px;height:88px;background:linear-gradient(135deg,#0D3A8A,#1A6BFF);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:44px;margin-bottom:18px;box-shadow:0 8px 28px rgba(43,127,255,0.4)}
+  .login-title{font-size:24px;font-weight:700;text-align:center;letter-spacing:-0.3px;margin-bottom:3px}
+  .login-sub{font-size:12px;color:#8898C0;text-align:center;line-height:1.6;margin-bottom:32px}
+  .login-box{width:100%;max-width:360px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px}
+  .login-label{font-size:11px;color:#8898C0;text-transform:uppercase;letter-spacing:0.9px;margin-bottom:7px;display:block;font-weight:600}
   .login-field{margin-bottom:16px}
-  .login-input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;color:var(--text);font-size:15px;font-family:'Sora',sans-serif;outline:none;transition:border-color .2s}
+  .login-input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px 14px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
   .login-input:focus{border-color:var(--accent)}
-  .login-btn{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;border:none;border-radius:var(--radius-sm);padding:13px;font-size:15px;font-weight:700;font-family:'Sora',sans-serif;cursor:pointer;margin-top:4px;transition:opacity .2s,transform .1s}
+  .login-btn{width:100%;background:linear-gradient(135deg,#1565D8,#2B7FFF);color:#fff;border:none;border-radius:var(--radius-sm);padding:14px;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;margin-top:4px;letter-spacing:0.3px;transition:opacity .2s,transform .1s;box-shadow:0 4px 16px rgba(43,127,255,0.4)}
   .login-btn:active{transform:scale(0.98)}
   .login-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
-  .login-error{color:var(--red);font-size:12px;text-align:center;margin-top:12px;min-height:16px}
-  .login-hospital{font-size:11px;color:var(--text3);text-align:center;margin-top:28px}
+  .login-error{color:var(--red);font-size:12px;text-align:center;margin-top:12px;min-height:16px;line-height:1.4}
+  .login-hospital{font-size:11px;color:#4A5880;text-align:center;margin-top:24px}
 
-  /* MAIN APP */
+  /* ─── MAIN APP ─── */
   #mainApp{display:none;flex-direction:column;height:100%}
   #mainApp.visible{display:flex}
-  .user-bar{display:flex;align-items:center;gap:8px;padding:5px 14px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:11px;color:var(--text3)}
+
+  /* USER BAR */
+  .user-bar{display:flex;align-items:center;gap:8px;padding:5px 14px;background:var(--surface);border-bottom:1px solid var(--border);font-size:11px;color:#4A5880}
   .user-bar-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
-  .user-bar span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .logout-btn{background:none;border:1px solid var(--border);color:var(--text3);border-radius:6px;padding:3px 9px;font-size:11px;cursor:pointer;font-family:'Sora',sans-serif;flex-shrink:0;transition:border-color .2s,color .2s}
+  .user-bar-email{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#8898C0}
+  .logout-btn{background:none;border:1px solid var(--border);color:#4A5880;border-radius:6px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:'Inter',sans-serif;flex-shrink:0;transition:all .2s}
   .logout-btn:hover{border-color:var(--red);color:var(--red)}
 
   /* HEADER */
-  #header{background:linear-gradient(135deg,#1A1400 0%,#2A1F00 40%,#1A1D27 100%);border-bottom:1px solid var(--border);padding:12px 16px 0}
-  .header-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-  .app-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 4px 12px rgba(193,127,42,0.4)}
-  .app-title{font-size:20px;font-weight:700;letter-spacing:-0.3px}
-  .app-subtitle{font-size:11px;color:var(--text2);margin-top:1px}
-  .header-right{margin-left:auto;text-align:right}
-  .update-time{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace}
-  .search-wrap{position:relative;margin-bottom:12px}
-  .search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none}
-  #searchInput{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 36px 10px 38px;color:var(--text);font-size:15px;font-family:'Sora',sans-serif;outline:none;transition:border-color .2s}
+  #header{background:linear-gradient(180deg,#0D1830 0%,#0B1120 100%);border-bottom:1px solid var(--border);padding:10px 14px 0;flex-shrink:0}
+  .header-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .app-logo{width:44px;height:44px;flex-shrink:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(43,127,255,0.35)}
+  .app-logo img{width:100%;height:100%;object-fit:cover}
+  .app-logo-fallback{width:44px;height:44px;background:linear-gradient(135deg,#0D3A8A,#2B7FFF);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 4px 14px rgba(43,127,255,0.35)}
+  .header-titles{flex:1;min-width:0}
+  .app-title{font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.2px;line-height:1.2}
+  .app-subtitle{font-size:10px;color:#8898C0;line-height:1.3}
+  .app-creator{font-size:9px;color:#4A5880;line-height:1.3}
+  .header-right{text-align:right;flex-shrink:0}
+  .update-time{font-size:10px;color:#4A5880;font-family:'Roboto Mono',monospace}
+
+  /* SEARCH */
+  .search-wrap{position:relative;margin-bottom:10px}
+  .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#4A5880;pointer-events:none}
+  #searchInput{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 36px 10px 38px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
   #searchInput:focus{border-color:var(--accent)}
-  #searchInput::placeholder{color:var(--text3)}
-  .clear-search{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text3);cursor:pointer;display:none;font-size:16px}
-  .tabs-scroll{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
-  .tabs-scroll::-webkit-scrollbar{display:none}
-  .tab{flex-shrink:0;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:none;background:var(--surface2);color:var(--text2);transition:all .2s}
-  .tab.active{background:var(--accent);color:#000;box-shadow:0 2px 8px rgba(193,127,42,0.4)}
-  .tab.tab-red.active{background:var(--red);color:#fff;box-shadow:0 2px 8px rgba(232,64,64,0.4)}
-  .tab.tab-yellow.active{background:var(--yellow);color:#000}
-  .tab.tab-green.active{background:var(--green);color:#000}
+  #searchInput::placeholder{color:#4A5880}
+  .clear-btn{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#4A5880;cursor:pointer;display:none;font-size:16px;line-height:1}
+
+  /* TABS */
+  .tabs-wrap{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+  .tabs-wrap::-webkit-scrollbar{display:none}
+  .tab{flex-shrink:0;padding:6px 13px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:#8898C0;transition:all .2s;font-family:'Inter',sans-serif}
+  .tab.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(43,127,255,0.4)}
+  .tab.t-red.active{background:var(--red);border-color:var(--red);box-shadow:0 2px 10px rgba(255,68,68,0.4)}
+  .tab.t-yellow.active{background:var(--yellow);border-color:var(--yellow);color:#000;box-shadow:0 2px 10px rgba(255,184,0,0.4)}
+  .tab.t-green.active{background:var(--green);border-color:var(--green);color:#000;box-shadow:0 2px 10px rgba(0,204,102,0.4)}
 
   /* STATS */
-  #statsBar{display:flex;gap:8px;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+  #statsBar{display:flex;gap:7px;padding:8px 14px;background:var(--bg);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;flex-shrink:0}
   #statsBar::-webkit-scrollbar{display:none}
-  .stat-pill{display:flex;align-items:center;gap:5px;background:var(--surface);border-radius:20px;padding:5px 10px;font-size:11px;flex-shrink:0;border:1px solid var(--border)}
-  .stat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-  .stat-pill span:last-child{color:var(--text2)}
+  .stat-pill{display:flex;align-items:center;gap:5px;background:var(--surface);border-radius:20px;padding:5px 11px;font-size:11px;flex-shrink:0;border:1px solid var(--border)}
+  .stat-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+  .stat-pill strong{color:#fff}
+  .stat-pill span{color:#8898C0}
 
   /* LIST */
-  #listWrap{overflow-y:auto;flex:1;padding:0 12px 80px}
+  #listWrap{overflow-y:auto;flex:1;padding:6px 12px 80px}
   #listWrap::-webkit-scrollbar{width:3px}
   #listWrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-  .section-label{font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--text3);padding:14px 4px 6px;text-transform:uppercase}
-  .med-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .1s;position:relative}
-  .med-card:active{transform:scale(0.99)}
-  .med-card.expanded{border-color:var(--accent)}
-  .med-card-left-bar{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:12px 0 0 12px}
-  .bar-red{background:var(--red)}.bar-yellow{background:var(--yellow)}.bar-green{background:var(--green)}.bar-gray{background:var(--gray)}
-  .med-card-main{padding:12px 12px 12px 18px;display:flex;align-items:flex-start;gap:10px}
-  .med-info{flex:1;min-width:0}
-  .med-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px}
-  .med-meta{font-size:11px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .med-right{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
-  .fecha-badge{font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace;padding:3px 8px;border-radius:6px}
-  .badge-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
-  .badge-yellow{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-border)}
-  .badge-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
-  .badge-gray{background:var(--gray-bg);color:var(--gray);border:1px solid var(--gray-border)}
-  .total-global-badge{font-size:12px;font-weight:700;color:var(--accent2);font-family:'JetBrains Mono',monospace}
-  .total-label{font-size:9px;color:var(--text3)}
-  .chevron{width:20px;height:20px;color:var(--text3);transition:transform .25s;flex-shrink:0;margin-top:2px}
-  .med-card.expanded .chevron{transform:rotate(180deg)}
-  .lotes-section{display:none;padding:0 18px 12px;border-top:1px solid var(--border)}
-  .med-card.expanded .lotes-section{display:block}
-  .lotes-title{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--text3);text-transform:uppercase;padding:10px 0 8px}
-  .lote-row{display:flex;align-items:center;gap:8px;padding:8px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:6px;border:1px solid var(--border)}
-  .lote-color-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-  .lote-info{flex:1;min-width:0}
-  .lote-num{font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--text2)}
-  .lote-fecha{font-size:11px;color:var(--text3)}
-  .lote-total{font-size:13px;font-weight:700;font-family:'JetBrains Mono',monospace}
-  .extra-info{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
-  .extra-row{background:var(--bg);border-radius:6px;padding:7px 9px;border:1px solid var(--border)}
-  .extra-label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:2px}
-  .extra-value{font-size:12px;font-weight:500}
-  .total-global-row{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#1A1400,#2A1F00);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:8px 12px;margin-top:8px}
-  .total-global-row span:first-child{font-size:12px;color:var(--accent2);font-weight:600}
-  .total-global-row span:last-child{font-size:18px;font-weight:700;color:var(--accent2);font-family:'JetBrains Mono',monospace}
-  .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;color:var(--text3);text-align:center;padding:20px}
-  .empty-state .icon{font-size:40px;margin-bottom:12px}
-  .empty-state p{font-size:13px}
-  .no-lote{font-size:11px;color:var(--text3);font-style:italic}
-  .spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+
+  /* LOTE CARD — one per row */
+  .lote-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    margin-bottom:7px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:border-color .15s, transform .1s;
+    position:relative;
+  }
+  .lote-card:active{transform:scale(0.99)}
+  .lote-card.expanded{border-color:var(--accent)}
+  .lc-bar{position:absolute;left:0;top:0;bottom:0;width:5px;border-radius:14px 0 0 14px}
+  .lc-bar-red{background:var(--red)}
+  .lc-bar-yellow{background:var(--yellow)}
+  .lc-bar-green{background:var(--green)}
+  .lc-bar-gray{background:var(--gray)}
+
+  .lc-main{padding:11px 11px 11px 18px;display:flex;align-items:center;gap:10px}
+  .lc-info{flex:1;min-width:0}
+  .lc-name{font-size:14px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px;font-family:'Inter',sans-serif}
+  .lc-meta{font-size:12px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
+  .lc-lote{font-size:10px;color:#8898C0;margin-top:2px;font-family:'Roboto Mono',monospace}
+  .lc-right{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .fecha-badge{font-size:11px;font-weight:700;font-family:'Roboto Mono',monospace;padding:3px 9px;border-radius:7px;letter-spacing:0.3px}
+  .fb-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+  .fb-yellow{background:var(--yellow-bg);color:var(--yellow);border:1px solid var(--yellow-border)}
+  .fb-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
+  .fb-gray{background:var(--gray-bg);color:var(--gray);border:1px solid var(--gray-border)}
+  .lc-stock{font-size:14px;font-weight:700;color:#FFB800;font-family:'Roboto Mono',monospace}
+  .lc-stock-label{font-size:9px;color:#4A5880;font-weight:400}
+  .chevron{width:18px;height:18px;color:#4A5880;transition:transform .25s;flex-shrink:0}
+  .lote-card.expanded .chevron{transform:rotate(180deg)}
+
+  /* DETAIL PANEL */
+  .detail-panel{display:none;border-top:1px solid var(--border);padding:12px 16px 14px}
+  .lote-card.expanded .detail-panel{display:block}
+
+  .detail-title{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#4A5880;text-transform:uppercase;margin-bottom:10px;padding-top:2px}
+
+  .detail-lote-row{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:6px;border:1px solid var(--border)}
+  .dl-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+  .dl-info{flex:1;min-width:0}
+  .dl-lote{font-size:12px;font-family:'Roboto Mono',monospace;color:#fff;font-weight:500}
+  .dl-fecha{font-size:11px;color:#8898C0}
+  .dl-stock{font-size:14px;font-weight:700;font-family:'Roboto Mono',monospace;color:#fff}
+
+  .detail-total{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#0D1F4A,#112466);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:10px 14px;margin-top:8px}
+  .detail-total span:first-child{font-size:12px;color:var(--accent2);font-weight:700;letter-spacing:0.5px}
+  .detail-total span:last-child{font-size:20px;font-weight:700;color:#fff;font-family:'Roboto Mono',monospace}
+
+  .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+  .dg-cell{background:var(--bg);border-radius:8px;padding:8px 10px;border:1px solid var(--border)}
+  .dg-label{font-size:9px;color:#4A5880;text-transform:uppercase;letter-spacing:0.9px;margin-bottom:3px;font-weight:600}
+  .dg-value{font-size:12px;color:#fff;font-weight:500;line-height:1.3}
+  .dg-cell.full{grid-column:1/-1}
+
+  /* EMPTY */
+  .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:220px;color:#4A5880;text-align:center;gap:12px}
+  .empty-state .eicon{font-size:44px}
+  .empty-state p{font-size:13px;line-height:1.5}
+
+  /* SPINNER */
+  .spinner{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
-  @media(min-width:600px){#listWrap{max-width:700px;margin:0 auto;width:100%}#statsBar{max-width:700px;margin:0 auto}}
+
+  .load-center{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:14px;color:#8898C0;font-size:13px}
+
+  @media(min-width:600px){
+    #listWrap{max-width:720px;margin:0 auto;width:100%}
+    #statsBar>*{flex:1;justify-content:center}
+  }
 </style>
 </head>
 <body>
 
 <div id="authLoading">
   <div class="spinner"></div>
-  <span>Verificando sesión...</span>
+  <span style="font-size:13px;color:#8898C0">Verificando sesión...</span>
 </div>
 
+<!-- LOGIN -->
 <div id="loginScreen" class="hidden">
-  <div class="login-logo">💊</div>
-  <div class="login-title">FarmaCheck</div>
-  <div class="login-sub">Hospital Municipal La Portada<br>Control de Vencimientos · Farmacia</div>
+  <div class="login-logo-fallback" id="loginLogoFallback">
+    <img src="icon-512.png" alt="logo" style="width:100%;height:100%;object-fit:contain;border-radius:20px" onerror="this.parentElement.innerHTML='🏥'">
+  </div>
+  <div class="login-title">Almacén de Farmacia</div>
+  <div class="login-sub">Hospital Municipal La Portada<br>Control de Vencimientos y Stock</div>
   <div class="login-box">
     <div class="login-field">
       <label class="login-label">Correo electrónico</label>
@@ -158,56 +206,59 @@
   <div class="login-hospital">🔒 Acceso restringido al personal autorizado</div>
 </div>
 
+<!-- MAIN APP -->
 <div id="mainApp">
   <div class="user-bar">
     <div class="user-bar-dot"></div>
-    <span id="userEmail">—</span>
+    <span class="user-bar-email" id="userEmail">—</span>
     <button class="logout-btn" id="logoutBtn">Cerrar sesión</button>
   </div>
+
   <div id="header">
     <div class="header-top">
-      <div class="app-icon">💊</div>
-      <div>
-        <div class="app-title">FarmaCheck</div>
+      <div class="app-logo">
+        <img src="icon-192.png" alt="logo" onerror="this.parentElement.outerHTML='<div class=\'app-logo-fallback\'>🏥</div>'">
+      </div>
+      <div class="header-titles">
+        <div class="app-title">ALMACEN FARMACIA</div>
         <div class="app-subtitle">Hospital Municipal La Portada</div>
+        <div class="app-creator">Creado por: Marcelo Oviedo L.</div>
       </div>
       <div class="header-right">
-        <div class="update-time" id="updateTime">Cargando...</div>
-        <div class="update-time" id="totalMeds" style="margin-top:2px"></div>
+        <div class="update-time" id="updateTime">—</div>
+        <div class="update-time" id="totalMeds" style="margin-top:2px;color:#8898C0"></div>
       </div>
     </div>
     <div class="search-wrap">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       <input type="text" id="searchInput" placeholder="Buscar medicamento..." autocomplete="off" autocorrect="off" spellcheck="false">
-      <button class="clear-search" id="clearSearch">✕</button>
+      <button class="clear-btn" id="clearBtn">✕</button>
     </div>
-    <div class="tabs-scroll" id="tabsContainer">
+    <div class="tabs-wrap" id="tabsWrap">
       <button class="tab active" data-tab="all">Todos</button>
       <button class="tab" data-tab="AC">A – C</button>
       <button class="tab" data-tab="DH">D – H</button>
       <button class="tab" data-tab="IO">I – O</button>
       <button class="tab" data-tab="PZ">P – Z</button>
-      <button class="tab tab-red" data-tab="red">🔴 Urgente</button>
-      <button class="tab tab-yellow" data-tab="yellow">🟡 Próx.</button>
-      <button class="tab tab-green" data-tab="green">🟢 OK</button>
+      <button class="tab t-red" data-tab="red">🔴 Urgente</button>
+      <button class="tab t-yellow" data-tab="yellow">🟡 Próximos</button>
+      <button class="tab t-green" data-tab="green">🟢 OK</button>
     </div>
   </div>
-  <div id="content" style="flex:1;display:flex;flex-direction:column;overflow:hidden">
-    <div id="statsBar">
-      <div class="stat-pill"><div class="stat-dot" style="background:var(--red)"></div><strong id="countRed">-</strong><span>≤6m</span></div>
-      <div class="stat-pill"><div class="stat-dot" style="background:var(--yellow)"></div><strong id="countYellow">-</strong><span>6-12m</span></div>
-      <div class="stat-pill"><div class="stat-dot" style="background:var(--green)"></div><strong id="countGreen">-</strong><span>&gt;12m</span></div>
-      <div class="stat-pill"><div class="stat-dot" style="background:var(--gray)"></div><strong id="countGray">-</strong><span>sin stock</span></div>
-    </div>
-    <div id="listWrap">
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:14px;color:var(--text2)">
-        <div class="spinner"></div>
-        <span style="font-size:13px">Cargando inventario...</span>
-      </div>
-    </div>
+
+  <div id="statsBar">
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--red)"></div><strong id="cRed">-</strong><span>&nbsp;≤6m</span></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--yellow)"></div><strong id="cYellow">-</strong><span>&nbsp;6-12m</span></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--green)"></div><strong id="cGreen">-</strong><span>&nbsp;&gt;12m</span></div>
+    <div class="stat-pill"><div class="stat-dot" style="background:var(--gray)"></div><strong id="cGray">-</strong><span>&nbsp;s/stock</span></div>
+  </div>
+
+  <div id="listWrap">
+    <div class="load-center"><div class="spinner"></div><span>Cargando inventario...</span></div>
   </div>
 </div>
 
+<!-- Firebase -->
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged }
@@ -219,28 +270,22 @@ const firebaseConfig = {
   projectId: "almacen-d526b",
   storageBucket: "almacen-d526b.firebasestorage.app",
   messagingSenderId: "781156379872",
-  appId: "1:781156379872:web:4ada47ede9527ab5189485",
-  measurementId: "6-7QDTQLM4E3"
+  appId: "1:781156379872:web:4ada47ede9527ab5189485"
 };
-
 const auth = getAuth(initializeApp(firebaseConfig));
-
 const $ = id => document.getElementById(id);
-const authLoading  = $('authLoading');
-const loginScreen  = $('loginScreen');
-const mainApp      = $('mainApp');
 
-// ── AUTH STATE OBSERVER ──
+// ── AUTH STATE ──
 onAuthStateChanged(auth, user => {
-  authLoading.classList.add('hidden');
+  $('authLoading').classList.add('hidden');
   if (user) {
-    loginScreen.classList.add('hidden');
-    mainApp.classList.add('visible');
+    $('loginScreen').classList.add('hidden');
+    $('mainApp').classList.add('visible');
     $('userEmail').textContent = user.email;
     loadData();
   } else {
-    mainApp.classList.remove('visible');
-    loginScreen.classList.remove('hidden');
+    $('mainApp').classList.remove('visible');
+    $('loginScreen').classList.remove('hidden');
   }
 });
 
@@ -249,152 +294,206 @@ $('loginBtn').addEventListener('click', async () => {
   const email = $('loginEmail').value.trim();
   const pass  = $('loginPassword').value;
   if (!email || !pass) { $('loginError').textContent = 'Ingresá tu correo y contraseña.'; return; }
-  $('loginBtn').disabled = true;
-  $('loginBtn').textContent = 'Ingresando...';
-  $('loginError').textContent = '';
+  $('loginBtn').disabled = true; $('loginBtn').textContent = 'Ingresando...'; $('loginError').textContent = '';
   try {
     await signInWithEmailAndPassword(auth, email, pass);
   } catch (err) {
-    const msgs = {
-      'auth/user-not-found':     'Correo no registrado.',
-      'auth/wrong-password':     'Contraseña incorrecta.',
-      'auth/invalid-email':      'Correo inválido.',
-      'auth/too-many-requests':  'Demasiados intentos. Intentá más tarde.',
-      'auth/invalid-credential': 'Correo o contraseña incorrectos.',
-    };
-    $('loginError').textContent = msgs[err.code] || 'Error al ingresar. Intentá de nuevo.';
-    $('loginBtn').disabled = false;
-    $('loginBtn').textContent = 'Ingresar al Sistema';
+    const msgs = {'auth/invalid-credential':'Correo o contraseña incorrectos.','auth/user-not-found':'Correo no registrado.','auth/wrong-password':'Contraseña incorrecta.','auth/too-many-requests':'Demasiados intentos. Esperá unos minutos.'};
+    $('loginError').textContent = msgs[err.code] || 'Error al ingresar.';
+    $('loginBtn').disabled = false; $('loginBtn').textContent = 'Ingresar al Sistema';
   }
 });
-[$('loginEmail'), $('loginPassword')].forEach(el =>
-  el.addEventListener('keydown', e => { if (e.key === 'Enter') $('loginBtn').click(); })
-);
-
-// ── LOGOUT ──
+[$('loginEmail'),$('loginPassword')].forEach(el => el.addEventListener('keydown', e => { if (e.key==='Enter') $('loginBtn').click(); }));
 $('logoutBtn').addEventListener('click', () => signOut(auth));
 
-// ══════════════════════════════════
+// ══════════════════════════════════════════
 // ── INVENTARIO ──
-// ══════════════════════════════════
-let grouped = {}, currentTab = 'all', searchQuery = '';
+// ══════════════════════════════════════════
+let allData = []; // array of raw lote records
+let currentTab = 'all', searchQuery = '';
 
-const getColor = f => {
+// Mapa codigo → todos los lotes del mismo medicamento
+let byCode = {};
+
+const MESES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+function color(f) {
   if (!f) return 'gray';
-  const m = (new Date(f) - new Date()) / (1000*60*60*24*30.44);
+  const m = (new Date(f) - Date.now()) / (1000*60*60*24*30.44);
   return m < 0 ? 'red' : m <= 6 ? 'red' : m <= 12 ? 'yellow' : 'green';
-};
-const worstColor = lotes => {
-  const p = {red:0,yellow:1,green:2,gray:3};
-  return lotes.reduce((w,l) => { const c=getColor(l.fecha_vencimiento); return p[c]<p[w]?c:w; }, 'gray');
-};
-const fmt = f => {
-  if (!f) return 'Sin fecha';
-  const [y,m] = f.split('-');
-  return ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'][+m-1]+' '+y;
-};
-
-function groupData(data) {
-  const g = {};
-  for (const r of data) {
-    if (!g[r.codigo]) g[r.codigo] = {...r, total_global:0, lotes:[]};
-    g[r.codigo].total_global += r.total_por_lote||0;
-    if (r.lote||r.fecha_vencimiento)
-      g[r.codigo].lotes.push({lote:r.lote, fecha_vencimiento:r.fecha_vencimiento, total_por_lote:r.total_por_lote||0});
-  }
-  return g;
 }
 
-function filterMeds() {
-  let meds = Object.values(grouped);
+function fmt(f) {
+  if (!f) return 'Sin fecha';
+  const [y,mo] = f.split('-');
+  return MESES[+mo-1]+' '+y;
+}
+
+function buildByCode(data) {
+  const map = {};
+  for (const r of data) {
+    if (!map[r.codigo]) map[r.codigo] = { medicamento:r.medicamento, forma_farmaceutica:r.forma_farmaceutica, concentracion:r.concentracion, proveedor:r.proveedor, porcentaje_cambio:r.porcentaje_cambio, tiempo_devolucion:r.tiempo_devolucion, año_adquisicion:r.año_adquisicion, tipo_proceso:r.tipo_proceso, lotes:[], total_global:0 };
+    if (r.lote || r.fecha_vencimiento) map[r.codigo].lotes.push({ lote:r.lote, fecha:r.fecha_vencimiento, stock:r.total_por_lote||0 });
+    map[r.codigo].total_global += r.total_por_lote||0;
+  }
+  return map;
+}
+
+function filterRows() {
+  let rows = [...allData];
   const ranges = {AC:['A','C'],DH:['D','H'],IO:['I','O'],PZ:['P','Z']};
   if (ranges[currentTab]) {
-    const [f,t]=ranges[currentTab];
-    meds=meds.filter(m=>{const l=m.medicamento.trim()[0].toUpperCase();return l>=f&&l<=t;});
+    const [f,t] = ranges[currentTab];
+    rows = rows.filter(r => { const l=r.medicamento[0].toUpperCase(); return l>=f&&l<=t; });
   } else if (['red','yellow','green'].includes(currentTab)) {
-    meds=meds.filter(m=>worstColor(m.lotes)===currentTab);
+    rows = rows.filter(r => color(r.fecha_vencimiento) === currentTab);
+  }
+  // Exclude rows with no lote AND no date AND no stock for "Todos" (still show in gray tabs if needed)
+  if (currentTab === 'all' || ranges[currentTab]) {
+    // keep all — gray ones (no stock) still show
   }
   if (searchQuery) {
-    const q=searchQuery.toLowerCase();
-    meds=meds.filter(m=>m.medicamento.toLowerCase().includes(q)||m.codigo.toLowerCase().includes(q)||(m.forma_farmaceutica&&m.forma_farmaceutica.toLowerCase().includes(q)));
+    const q = searchQuery.toLowerCase();
+    rows = rows.filter(r => r.medicamento.toLowerCase().includes(q) || r.codigo.toLowerCase().includes(q) || (r.forma_farmaceutica&&r.forma_farmaceutica.toLowerCase().includes(q)) || (r.concentracion&&r.concentracion.toLowerCase().includes(q)));
   }
-  const p={red:0,yellow:1,green:2,gray:3};
-  meds.sort((a,b)=>{const d=p[worstColor(a.lotes)]-p[worstColor(b.lotes)];return d||a.medicamento.localeCompare(b.medicamento,'es');});
-  return meds;
+  // Sort by fecha ASC (soonest first), nulls at end, then alphabetically
+  rows.sort((a,b) => {
+    const fa = a.fecha_vencimiento, fb = b.fecha_vencimiento;
+    if (fa && fb) return new Date(fa)-new Date(fb);
+    if (fa) return -1;
+    if (fb) return 1;
+    return a.medicamento.localeCompare(b.medicamento,'es');
+  });
+  return rows;
 }
 
 function renderStats() {
   const c={red:0,yellow:0,green:0,gray:0};
-  for(const m of Object.values(grouped)) c[worstColor(m.lotes)]++;
-  $('countRed').textContent=c.red; $('countYellow').textContent=c.yellow;
-  $('countGreen').textContent=c.green; $('countGray').textContent=c.gray;
+  for (const r of allData) c[color(r.fecha_vencimiento)]++;
+  $('cRed').textContent=c.red; $('cYellow').textContent=c.yellow;
+  $('cGreen').textContent=c.green; $('cGray').textContent=c.gray;
 }
 
+function dotClr(c){ return c==='red'?'var(--red)':c==='yellow'?'var(--yellow)':c==='green'?'var(--green)':'var(--gray)'; }
+
 function renderList() {
-  const list=filterMeds(), wrap=$('listWrap');
-  if (!list.length) { wrap.innerHTML=`<div class="empty-state"><div class="icon">🔍</div><p>No se encontraron medicamentos</p></div>`; return; }
-  let html='', lastLetter='';
-  for (const m of list) {
-    const letter=m.medicamento.trim()[0].toUpperCase();
-    if (letter!==lastLetter&&!searchQuery) { html+=`<div class="section-label">${letter}</div>`; lastLetter=letter; }
-    const color=worstColor(m.lotes);
-    const worstF=m.lotes.filter(l=>l.fecha_vencimiento).sort((a,b)=>new Date(a.fecha_vencimiento)-new Date(b.fecha_vencimiento))[0]?.fecha_vencimiento||null;
-    const dotC=c=>c==='red'?'var(--red)':c==='yellow'?'var(--yellow)':c==='green'?'var(--green)':'var(--gray)';
-    const lotesHtml=!m.lotes.length
-      ?`<div class="no-lote">Sin lotes registrados / Sin stock</div>`
-      :m.lotes.map(l=>`<div class="lote-row"><div class="lote-color-dot" style="background:${dotC(getColor(l.fecha_vencimiento))}"></div><div class="lote-info"><div class="lote-num">Lote: ${l.lote||'N/A'}</div><div class="lote-fecha">${fmt(l.fecha_vencimiento)}</div></div><div class="lote-total">${l.total_por_lote.toLocaleString('es')}</div></div>`).join('');
-    const extraFields=[['Código',m.codigo],['Proveedor',m.proveedor],['% Cambio',m.porcentaje_cambio],['Tiempo Dev.',m.tiempo_devolucion],['Año Adq.',m.año_adquisicion],['Tipo Proceso',m.tipo_proceso]];
-    const extras=extraFields.filter(([,v])=>v&&v!=='nan'&&v!=='None'&&v!=='null').map(([l,v])=>`<div class="extra-row"><div class="extra-label">${l}</div><div class="extra-value">${v}</div></div>`).join('');
-    html+=`<div class="med-card" data-codigo="${m.codigo}">
-      <div class="med-card-left-bar bar-${color}"></div>
-      <div class="med-card-main">
-        <div class="med-info"><div class="med-name">${m.medicamento}</div><div class="med-meta">${m.forma_farmaceutica||'—'} · ${m.concentracion||'—'}</div></div>
-        <div class="med-right"><span class="fecha-badge badge-${color}">${fmt(worstF)}</span><span class="total-global-badge">${m.total_global.toLocaleString('es')}</span><span class="total-label">unidades</span></div>
+  const rows = filterRows();
+  const wrap = $('listWrap');
+  if (!rows.length) {
+    wrap.innerHTML = `<div class="empty-state"><div class="eicon">🔍</div><p>No se encontraron medicamentos</p></div>`;
+    return;
+  }
+
+  let html = '';
+  for (const r of rows) {
+    const c = color(r.fecha_vencimiento);
+    const info = byCode[r.codigo];
+
+    // Build detail panel: all lotes of this medicamento
+    let lotesHtml = '';
+    if (info && info.lotes.length) {
+      const sorted = [...info.lotes].sort((a,b) => {
+        if (a.fecha&&b.fecha) return new Date(a.fecha)-new Date(b.fecha);
+        return a.fecha?-1:1;
+      });
+      for (const l of sorted) {
+        const lc = color(l.fecha);
+        lotesHtml += `<div class="detail-lote-row">
+          <div class="dl-dot" style="background:${dotClr(lc)}"></div>
+          <div class="dl-info">
+            <div class="dl-lote">Lote: ${l.lote||'N/A'}</div>
+            <div class="dl-fecha">${fmt(l.fecha)}</div>
+          </div>
+          <div class="dl-stock">${l.stock.toLocaleString('es')}</div>
+        </div>`;
+      }
+    } else {
+      lotesHtml = `<div style="font-size:12px;color:#4A5880;font-style:italic;padding:6px 0">Sin lotes registrados</div>`;
+    }
+
+    // Extra info grid
+    const extras = [
+      ['Código', r.codigo],
+      ['Proveedor', r.proveedor],
+      ['% Cambio/Dev.', r.porcentaje_cambio],
+      ['Tiempo Dev.', r.tiempo_devolucion],
+      ['Año Adquisición', r.año_adquisicion],
+      ['Tipo Proceso', r.tipo_proceso],
+    ].filter(([,v]) => v && v!=='nan' && v!=='null' && v!=='None');
+
+    const gridHtml = extras.length
+      ? `<div class="detail-grid">${extras.map(([l,v]) => `<div class="dg-cell"><div class="dg-label">${l}</div><div class="dg-value">${v}</div></div>`).join('')}</div>`
+      : '';
+
+    const totalGlobal = info ? info.total_global : (r.total_por_lote||0);
+
+    html += `<div class="lote-card" data-codigo="${r.codigo}" data-lote="${r.lote||''}">
+      <div class="lc-bar lc-bar-${c}"></div>
+      <div class="lc-main">
+        <div class="lc-info">
+          <div class="lc-name">${r.medicamento}</div>
+          <div class="lc-meta">${r.forma_farmaceutica||'—'} · ${r.concentracion||'—'}</div>
+          <div class="lc-lote">${r.lote ? 'Lote: '+r.lote : 'Sin lote'}</div>
+        </div>
+        <div class="lc-right">
+          <span class="fecha-badge fb-${c}">${fmt(r.fecha_vencimiento)}</span>
+          <span class="lc-stock">${(r.total_por_lote||0).toLocaleString('es')}</span>
+          <span class="lc-stock-label">unidades</span>
+        </div>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </div>
-      <div class="lotes-section">
-        <div class="lotes-title">📦 Detalle por lotes (${m.lotes.length})</div>
+      <div class="detail-panel">
+        <div class="detail-title">📦 Todos los lotes — ${r.medicamento}</div>
         ${lotesHtml}
-        ${m.lotes.length?`<div class="total-global-row"><span>TOTAL GLOBAL</span><span>${m.total_global.toLocaleString('es')}</span></div>`:''}
-        ${extras?`<div class="extra-info">${extras}</div>`:''}
+        <div class="detail-total">
+          <span>TOTAL GLOBAL</span>
+          <span>${totalGlobal.toLocaleString('es')}</span>
+        </div>
+        ${gridHtml}
       </div>
     </div>`;
   }
-  wrap.innerHTML=html;
-  wrap.querySelectorAll('.med-card').forEach(card=>{
-    card.addEventListener('click',()=>{
-      const was=card.classList.contains('expanded');
-      wrap.querySelectorAll('.med-card.expanded').forEach(c=>c.classList.remove('expanded'));
-      if(!was){card.classList.add('expanded');setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'nearest'}),50);}
+
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('.lote-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const was = card.classList.contains('expanded');
+      wrap.querySelectorAll('.lote-card.expanded').forEach(c => c.classList.remove('expanded'));
+      if (!was) { card.classList.add('expanded'); setTimeout(() => card.scrollIntoView({behavior:'smooth',block:'nearest'}), 60); }
     });
   });
 }
 
-$('tabsContainer').addEventListener('click',e=>{
-  const btn=e.target.closest('.tab'); if(!btn) return;
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active'); currentTab=btn.dataset.tab; renderList();
+// TABS
+$('tabsWrap').addEventListener('click', e => {
+  const btn = e.target.closest('.tab'); if (!btn) return;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active'); currentTab = btn.dataset.tab; renderList();
 });
 
-const si=$('searchInput'), cb=$('clearSearch');
-si.addEventListener('input',()=>{ searchQuery=si.value.trim(); cb.style.display=searchQuery?'block':'none'; renderList(); });
-cb.addEventListener('click',()=>{ si.value=''; searchQuery=''; cb.style.display='none'; renderList(); });
+// SEARCH
+const si = $('searchInput'), cb = $('clearBtn');
+si.addEventListener('input', () => { searchQuery=si.value.trim(); cb.style.display=searchQuery?'block':'none'; renderList(); });
+cb.addEventListener('click', () => { si.value=''; searchQuery=''; cb.style.display='none'; renderList(); });
 
+// LOAD DATA
 async function loadData() {
   try {
-    const res=await fetch('farmacheck.json?v='+Date.now());
-    grouped=groupData(await res.json());
-    const now=new Date();
-    $('updateTime').textContent='Act: '+now.toLocaleDateString('es',{day:'2-digit',month:'2-digit',year:'2-digit'});
-    $('totalMeds').textContent=Object.keys(grouped).length+' medicamentos';
+    const res = await fetch('farmacheck.json?v='+Date.now());
+    allData = await res.json();
+    byCode = buildByCode(allData);
+    const now = new Date();
+    $('updateTime').textContent = 'Act: '+now.toLocaleDateString('es',{day:'2-digit',month:'2-digit',year:'2-digit'});
+    $('totalMeds').textContent = Object.keys(byCode).length+' medicamentos · '+allData.filter(r=>r.fecha_vencimiento).length+' lotes';
     renderStats(); renderList();
-  } catch {
-    $('listWrap').innerHTML=`<div class="empty-state"><div class="icon">⚠️</div><p>Error al cargar datos.<br>Verificá la conexión.</p></div>`;
+  } catch(e) {
+    $('listWrap').innerHTML = `<div class="empty-state"><div class="eicon">⚠️</div><p>Error al cargar datos.<br>Verificá la conexión.</p></div>`;
   }
 }
 
+// SERVICE WORKER
 if ('serviceWorker' in navigator)
-  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
 </body>
 </html>
