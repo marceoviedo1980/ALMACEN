@@ -876,13 +876,13 @@
     "concentracion": "sobre esteril",
     "lote": "24F24C",
     "fecha_vencimiento": "2029-05-01",
-    "total_por_lote": 3600,
+    "total_por_lote": 3500,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 3600
+    "total_global": 3500
   },
   {
     "codigo": "DAC066",
@@ -1296,13 +1296,13 @@
     "concentracion": "0.2",
     "lote": "4040012",
     "fecha_vencimiento": "2028-09-01",
-    "total_por_lote": 120,
+    "total_por_lote": 0,
     "proveedor": "ABD",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 120
+    "total_global": 0
   },
   {
     "codigo": "G0103",
@@ -1431,13 +1431,13 @@
     "concentracion": "SC STANDART",
     "lote": "32075",
     "fecha_vencimiento": "2027-01-01",
-    "total_por_lote": 3600,
+    "total_por_lote": 3120,
     "proveedor": "INTI",
     "porcentaje_cambio": "0.15",
     "tiempo_devolucion": "3 MESES ANTES",
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 3600
+    "total_global": 3120
   },
   {
     "codigo": "DPF003",
@@ -1446,13 +1446,13 @@
     "concentracion": "Sobre estéril",
     "lote": "230925",
     "fecha_vencimiento": "2028-08-01",
-    "total_por_lote": 288,
+    "total_por_lote": 144,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 1296
+    "total_global": 1152
   },
   {
     "codigo": "DPF003",
@@ -1467,7 +1467,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 1296
+    "total_global": 1152
   },
   {
     "codigo": "H0204",
@@ -1954,15 +1954,15 @@
     "medicamento": "Gluconato Cálcico (Calcio Gluconato)",
     "forma_farmaceutica": "Inyectable",
     "concentracion": "0.1",
-    "lote": "2410162",
-    "fecha_vencimiento": "2028-10-01",
-    "total_por_lote": 100,
+    "lote": null,
+    "fecha_vencimiento": null,
+    "total_por_lote": 0,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 100
+    "total_global": 0
   },
   {
     "codigo": "DMQ019.",
@@ -2601,13 +2601,13 @@
     "concentracion": "Sobre estéril",
     "lote": "112302",
     "fecha_vencimiento": "2028-01-01",
-    "total_por_lote": 450,
+    "total_por_lote": 400,
     "proveedor": "MEDICAL STORE",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 2450
+    "total_global": 2400
   },
   {
     "codigo": "DAC089",
@@ -2622,7 +2622,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 2450
+    "total_global": 2400
   },
   {
     "codigo": "DNP002A",
@@ -2691,13 +2691,13 @@
     "concentracion": "Adulto",
     "lote": "2023082501",
     "fecha_vencimiento": "2028-08-01",
-    "total_por_lote": 10,
+    "total_por_lote": 0,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 360
+    "total_global": 340
   },
   {
     "codigo": "DTO023",
@@ -2706,13 +2706,13 @@
     "concentracion": "Adulto",
     "lote": "2023082501",
     "fecha_vencimiento": "2028-08-01",
-    "total_por_lote": 350,
+    "total_por_lote": 340,
     "proveedor": "MEDICAL STORE",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 360
+    "total_global": 340
   },
   {
     "codigo": "DTO024",
@@ -2925,7 +2925,7 @@
     "total_global": 1500
   },
   {
-    "codigo": "L0124",
+    "codigo": "L0126",
     "medicamento": "Metotrexato",
     "forma_farmaceutica": "Comprimido",
     "concentracion": "2.5 mg",
