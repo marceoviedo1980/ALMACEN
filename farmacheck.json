@@ -2734,21 +2734,6 @@
     "medicamento": "Máscara paraoxigenoterapia",
     "forma_farmaceutica": "Adulto",
     "concentracion": "Adulto",
-    "lote": "2106011216",
-    "fecha_vencimiento": "2026-05-01",
-    "total_por_lote": 110,
-    "proveedor": null,
-    "porcentaje_cambio": null,
-    "tiempo_devolucion": null,
-    "año_adquisicion": null,
-    "tipo_proceso": null,
-    "total_global": 710
-  },
-  {
-    "codigo": "DTO026",
-    "medicamento": "Máscara paraoxigenoterapia",
-    "forma_farmaceutica": "Adulto",
-    "concentracion": "Adulto",
     "lote": "2022100901",
     "fecha_vencimiento": "2027-10-01",
     "total_por_lote": 600,
@@ -2757,7 +2742,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 710
+    "total_global": 600
   },
   {
     "codigo": "DTO027",
