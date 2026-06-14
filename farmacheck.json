@@ -27,7 +27,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 6520
+    "total_global": 6392
   },
   {
     "codigo": "V0301",
@@ -42,7 +42,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 6520
+    "total_global": 6392
   },
   {
     "codigo": "V0301",
@@ -57,7 +57,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 6520
+    "total_global": 6392
   },
   {
     "codigo": "V0301",
@@ -66,13 +66,13 @@
     "concentracion": "0.1",
     "lote": "2330006",
     "fecha_vencimiento": "2027-03-01",
-    "total_por_lote": 2560,
+    "total_por_lote": 2432,
     "proveedor": "ABD",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 6520
+    "total_global": 6392
   },
   {
     "codigo": "A1102",
@@ -126,13 +126,13 @@
     "concentracion": "100 mg",
     "lote": "240605",
     "fecha_vencimiento": "2027-06-01",
-    "total_por_lote": 3000,
+    "total_por_lote": 2000,
     "proveedor": "SAPHI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 3000
+    "total_global": 2000
   },
   {
     "codigo": "B0206",
@@ -291,13 +291,13 @@
     "concentracion": "10 mg",
     "lote": "T33416",
     "fecha_vencimiento": "2027-06-01",
-    "total_por_lote": 3500,
+    "total_por_lote": 2500,
     "proveedor": "LAQFAGAL",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 3500
+    "total_global": 2500
   },
   {
     "codigo": "J0105",
@@ -396,13 +396,13 @@
     "concentracion": "10mg",
     "lote": "30377",
     "fecha_vencimiento": "2027-10-01",
-    "total_por_lote": 17280,
+    "total_por_lote": 15360,
     "proveedor": "INTI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 21420
+    "total_global": 19500
   },
   {
     "codigo": "C1001",
@@ -417,7 +417,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 21420
+    "total_global": 19500
   },
   {
     "codigo": "M0301",
@@ -426,13 +426,13 @@
     "concentracion": "10 mg/ml",
     "lote": "GN2720",
     "fecha_vencimiento": "2026-12-01",
-    "total_por_lote": 100,
+    "total_por_lote": 0,
     "proveedor": "COFARBOL",
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 750
+    "total_global": 550
   },
   {
     "codigo": "M0301",
@@ -441,13 +441,13 @@
     "concentracion": "10 mg/ml",
     "lote": "2090018",
     "fecha_vencimiento": "2026-12-01",
-    "total_por_lote": 100,
+    "total_por_lote": 0,
     "proveedor": "ABD",
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 750
+    "total_global": 550
   },
   {
     "codigo": "M0301",
@@ -462,7 +462,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 750
+    "total_global": 550
   },
   {
     "codigo": "M0301",
@@ -477,7 +477,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 750
+    "total_global": 550
   },
   {
     "codigo": "M0301",
@@ -492,7 +492,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 750
+    "total_global": 550
   },
   {
     "codigo": "M0301",
@@ -507,7 +507,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 750
+    "total_global": 550
   },
   {
     "codigo": "J0113",
@@ -681,13 +681,13 @@
     "concentracion": "sobre esteril",
     "lote": "755140",
     "fecha_vencimiento": "2027-07-01",
-    "total_por_lote": 170,
+    "total_por_lote": 160,
     "proveedor": "HOSPIMED",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 290
+    "total_global": 280
   },
   {
     "codigo": "DB019",
@@ -702,7 +702,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 290
+    "total_global": 280
   },
   {
     "codigo": "DAC029",
@@ -876,13 +876,13 @@
     "concentracion": "sobre esteril",
     "lote": "24F24C",
     "fecha_vencimiento": "2029-05-01",
-    "total_por_lote": 3100,
+    "total_por_lote": 2900,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 3100
+    "total_global": 2900
   },
   {
     "codigo": "DAC066",
@@ -891,13 +891,13 @@
     "concentracion": "sobre esteril",
     "lote": "22L17C",
     "fecha_vencimiento": "2027-11-01",
-    "total_por_lote": 1300,
+    "total_por_lote": 1100,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 4900
+    "total_global": 4700
   },
   {
     "codigo": "DAC066",
@@ -912,7 +912,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 4900
+    "total_global": 4700
   },
   {
     "codigo": "DAC066",
@@ -927,7 +927,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 4900
+    "total_global": 4700
   },
   {
     "codigo": "DAC066",
@@ -942,7 +942,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 4900
+    "total_global": 4700
   },
   {
     "codigo": "DAC067",
@@ -996,13 +996,13 @@
     "concentracion": "Sobre estéril",
     "lote": "23E30G8301",
     "fecha_vencimiento": "2028-05-01",
-    "total_por_lote": 200,
+    "total_por_lote": 100,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 800
+    "total_global": 700
   },
   {
     "codigo": "DAC068",
@@ -1017,7 +1017,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 800
+    "total_global": 700
   },
   {
     "codigo": "J0121",
@@ -1047,7 +1047,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 2000
+    "total_global": 1500
   },
   {
     "codigo": "J0158",
@@ -1056,13 +1056,13 @@
     "concentracion": "400 mg",
     "lote": "240518",
     "fecha_vencimiento": "2027-05-01",
-    "total_por_lote": 1800,
+    "total_por_lote": 1300,
     "proveedor": "HIPOCRATES",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 2000
+    "total_global": 1500
   },
   {
     "codigo": "J0163",
@@ -1122,7 +1122,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 896
+    "total_global": 800
   },
   {
     "codigo": "J0128",
@@ -1131,13 +1131,13 @@
     "concentracion": "200 mg",
     "lote": "240209",
     "fecha_vencimiento": "2027-01-01",
-    "total_por_lote": 90,
+    "total_por_lote": 0,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 896
+    "total_global": 800
   },
   {
     "codigo": "J0128",
@@ -1152,7 +1152,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 896
+    "total_global": 800
   },
   {
     "codigo": "J0128",
@@ -1160,14 +1160,14 @@
     "forma_farmaceutica": "Inyectable",
     "concentracion": "200 mg",
     "lote": "250201",
-    "fecha_vencimiento": "2028-08-01",
-    "total_por_lote": 6,
+    "fecha_vencimiento": "2028-02-01",
+    "total_por_lote": 0,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 896
+    "total_global": 800
   },
   {
     "codigo": "J0128",
@@ -1182,7 +1182,7 @@
     "tiempo_devolucion": "1  MES ANTES",
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 896
+    "total_global": 800
   },
   {
     "codigo": "J0128",
@@ -1197,7 +1197,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 896
+    "total_global": 800
   },
   {
     "codigo": "J0127",
@@ -1212,7 +1212,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 1300
+    "total_global": 800
   },
   {
     "codigo": "J0127",
@@ -1221,13 +1221,13 @@
     "concentracion": "500 mg",
     "lote": "T-04222",
     "fecha_vencimiento": "2027-04-01",
-    "total_por_lote": 1200,
+    "total_por_lote": 700,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 1300
+    "total_global": 800
   },
   {
     "codigo": "DNP001",
@@ -1311,13 +1311,13 @@
     "concentracion": "0.2",
     "lote": "4030019",
     "fecha_vencimiento": "2030-02-01",
-    "total_por_lote": 3240,
+    "total_por_lote": 3120,
     "proveedor": "ABD",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 3240
+    "total_global": 3120
   },
   {
     "codigo": "B0507",
@@ -1461,13 +1461,13 @@
     "concentracion": "SC STANDART",
     "lote": "32075",
     "fecha_vencimiento": "2027-01-01",
-    "total_por_lote": 720,
+    "total_por_lote": 0,
     "proveedor": "INTI",
     "porcentaje_cambio": "0.15",
     "tiempo_devolucion": "3 MESES ANTES",
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 720
+    "total_global": 0
   },
   {
     "codigo": "DPF003",
@@ -1506,13 +1506,13 @@
     "concentracion": "4 mg/ml",
     "lote": "240699",
     "fecha_vencimiento": "2027-06-01",
-    "total_por_lote": 200,
+    "total_por_lote": 0,
     "proveedor": "SAPHI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 2390
+    "total_global": 7300
   },
   {
     "codigo": "H0204",
@@ -1521,28 +1521,13 @@
     "concentracion": "4 mg/ml",
     "lote": "104250410",
     "fecha_vencimiento": "2028-03-01",
-    "total_por_lote": 2190,
+    "total_por_lote": 7300,
     "proveedor": "SAPHI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 2390
-  },
-  {
-    "codigo": "H0204",
-    "medicamento": "Dexametasona",
-    "forma_farmaceutica": "Inyectable",
-    "concentracion": "4 mg/ml",
-    "lote": "104250410",
-    "fecha_vencimiento": "2028-03-01",
-    "total_por_lote": 0,
-    "proveedor": "SAPHI",
-    "porcentaje_cambio": "NO APLICA",
-    "tiempo_devolucion": null,
-    "año_adquisicion": 2026,
-    "tipo_proceso": null,
-    "total_global": 2390
+    "total_global": 7300
   },
   {
     "codigo": "R0503",
@@ -1596,13 +1581,13 @@
     "concentracion": "75 mg",
     "lote": "2410130",
     "fecha_vencimiento": "2027-10-01",
-    "total_por_lote": 1000,
+    "total_por_lote": 800,
     "proveedor": "KADILA",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 3300
+    "total_global": 8490
   },
   {
     "codigo": "M0103",
@@ -1611,28 +1596,13 @@
     "concentracion": "75 mg",
     "lote": "107250903",
     "fecha_vencimiento": "2028-08-01",
-    "total_por_lote": 2300,
+    "total_por_lote": 7690,
     "proveedor": "SAPHI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 3300
-  },
-  {
-    "codigo": "M0103",
-    "medicamento": "Diclofenaco Sodico",
-    "forma_farmaceutica": "Inyectable",
-    "concentracion": "75 mg",
-    "lote": "107250903",
-    "fecha_vencimiento": "2028-08-01",
-    "total_por_lote": 0,
-    "proveedor": "SAPHI",
-    "porcentaje_cambio": "NO APLICA",
-    "tiempo_devolucion": null,
-    "año_adquisicion": 2026,
-    "tipo_proceso": null,
-    "total_global": 3300
+    "total_global": 8490
   },
   {
     "codigo": "J0141",
@@ -1656,13 +1626,13 @@
     "concentracion": "Sobre",
     "lote": "25DIS2501",
     "fecha_vencimiento": "2028-01-01",
-    "total_por_lote": 1400,
+    "total_por_lote": 1300,
     "proveedor": "WINNER MEDICAL",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 1400
+    "total_global": 1300
   },
   {
     "codigo": "C0110",
@@ -1671,13 +1641,13 @@
     "concentracion": "1 mg/ml",
     "lote": "30788",
     "fecha_vencimiento": "2026-11-01",
-    "total_por_lote": 200,
+    "total_por_lote": 0,
     "proveedor": "INTI",
     "porcentaje_cambio": "0.15",
     "tiempo_devolucion": "3 MESES ANTES",
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 200
+    "total_global": 0
   },
   {
     "codigo": "IE003",
@@ -1701,13 +1671,13 @@
     "concentracion": "Sobre estéril",
     "lote": "20241130",
     "fecha_vencimiento": "2029-11-01",
-    "total_por_lote": 2400,
+    "total_por_lote": 2000,
     "proveedor": "PROTEX",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 5600
+    "total_global": 5200
   },
   {
     "codigo": "DAC074",
@@ -1722,7 +1692,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 5600
+    "total_global": 5200
   },
   {
     "codigo": "C0901",
@@ -1911,13 +1881,28 @@
     "concentracion": "200 mg",
     "lote": "31529",
     "fecha_vencimiento": "2027-01-01",
-    "total_por_lote": 315,
+    "total_por_lote": 245,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 315
+    "total_global": 280
+  },
+  {
+    "codigo": "J0202",
+    "medicamento": "Fluconazol",
+    "forma_farmaceutica": "Inyectable",
+    "concentracion": "200 mg",
+    "lote": "36833",
+    "fecha_vencimiento": "2027-11-01",
+    "total_por_lote": 35,
+    "proveedor": null,
+    "porcentaje_cambio": null,
+    "tiempo_devolucion": null,
+    "año_adquisicion": null,
+    "tipo_proceso": null,
+    "total_global": 280
   },
   {
     "codigo": "J0208",
@@ -1941,13 +1926,13 @@
     "concentracion": "10mg/ml",
     "lote": "240618",
     "fecha_vencimiento": "2027-06-01",
-    "total_por_lote": 1000,
+    "total_por_lote": 900,
     "proveedor": "ILLAMPU",
     "porcentaje_cambio": null,
     "tiempo_devolucion": "6 MESES ANTES",
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 1000
+    "total_global": 900
   },
   {
     "codigo": "DL205",
@@ -1956,13 +1941,13 @@
     "concentracion": "Pieza",
     "lote": "24C0173",
     "fecha_vencimiento": "2029-01-01",
-    "total_por_lote": 250,
+    "total_por_lote": 0,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 1000
+    "total_global": 750
   },
   {
     "codigo": "DL205",
@@ -1977,7 +1962,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 1000
+    "total_global": 750
   },
   {
     "codigo": "C0305",
@@ -2031,13 +2016,13 @@
     "concentracion": "5 mg",
     "lote": "T09025",
     "fecha_vencimiento": "2027-07-01",
-    "total_por_lote": 10000,
+    "total_por_lote": 9000,
     "proveedor": "LAQFAGAL",
     "porcentaje_cambio": "0.15",
     "tiempo_devolucion": "3 MESES ANTES",
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 10000
+    "total_global": 9000
   },
   {
     "codigo": "B0510",
@@ -2076,13 +2061,13 @@
     "concentracion": "Sobre estéril",
     "lote": "20240920",
     "fecha_vencimiento": "2029-09-01",
-    "total_por_lote": 4100,
+    "total_por_lote": 4000,
     "proveedor": "PROTEX",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 4100
+    "total_global": 4000
   },
   {
     "codigo": "DMQ021",
@@ -2331,28 +2316,13 @@
     "concentracion": "400 mg",
     "lote": "250605",
     "fecha_vencimiento": "2028-06-01",
-    "total_por_lote": 1000,
+    "total_por_lote": 7500,
     "proveedor": "SAPHI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 1000
-  },
-  {
-    "codigo": "M0105",
-    "medicamento": "Ibuprofeno",
-    "forma_farmaceutica": "Comprimido",
-    "concentracion": "400 mg",
-    "lote": "250605",
-    "fecha_vencimiento": "2028-06-01",
-    "total_por_lote": 0,
-    "proveedor": "SAPHI",
-    "porcentaje_cambio": "NO APLICA",
-    "tiempo_devolucion": null,
-    "año_adquisicion": 2026,
-    "tipo_proceso": null,
-    "total_global": 1000
+    "total_global": 7500
   },
   {
     "codigo": "J0150",
@@ -2406,13 +2376,13 @@
     "concentracion": "100 UI/ml",
     "lote": "BF23006893",
     "fecha_vencimiento": "2026-12-01",
-    "total_por_lote": 210,
+    "total_por_lote": 180,
     "proveedor": "FRALAK",
     "porcentaje_cambio": "0.15",
     "tiempo_devolucion": "1 MES ANTES",
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 210
+    "total_global": 180
   },
   {
     "codigo": "A1003",
@@ -2466,13 +2436,13 @@
     "concentracion": "Sobre estéril",
     "lote": "20250104",
     "fecha_vencimiento": "2030-01-01",
-    "total_por_lote": 23300,
+    "total_por_lote": 21600,
     "proveedor": "BIOMEDICAL",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 33300
+    "total_global": 31600
   },
   {
     "codigo": "DJ005",
@@ -2487,7 +2457,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 33300
+    "total_global": 31600
   },
   {
     "codigo": "DJ006",
@@ -2526,13 +2496,13 @@
     "concentracion": "Sobre estéril",
     "lote": "20241019",
     "fecha_vencimiento": "2029-10-01",
-    "total_por_lote": 3000,
+    "total_por_lote": 2800,
     "proveedor": "PROTEX",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 3000
+    "total_global": 2800
   },
   {
     "codigo": "M0110",
@@ -2556,13 +2526,13 @@
     "concentracion": "30 mg/ml",
     "lote": "31485",
     "fecha_vencimiento": "2028-01-01",
-    "total_por_lote": 1900,
+    "total_por_lote": 1800,
     "proveedor": "INTI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 1900
+    "total_global": 1800
   },
   {
     "codigo": "A0607",
@@ -2571,13 +2541,13 @@
     "concentracion": "65% a  67%",
     "lote": "4EL01351",
     "fecha_vencimiento": "2027-11-01",
-    "total_por_lote": 68,
+    "total_por_lote": 48,
     "proveedor": "ILLAMPU",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 68
+    "total_global": 48
   },
   {
     "codigo": "S0118",
@@ -2631,13 +2601,13 @@
     "concentracion": "50 mg",
     "lote": "2121813",
     "fecha_vencimiento": "2026-12-01",
-    "total_por_lote": 7900,
+    "total_por_lote": 2000,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 7900
+    "total_global": 2000
   },
   {
     "codigo": "DAC088",
@@ -2646,13 +2616,13 @@
     "concentracion": "Sobre estéril",
     "lote": "B23201",
     "fecha_vencimiento": "2028-06-01",
-    "total_por_lote": 5300,
+    "total_por_lote": 5125,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 5300
+    "total_global": 5125
   },
   {
     "codigo": "DAC089",
@@ -2841,13 +2811,13 @@
     "concentracion": "1 g",
     "lote": "241185",
     "fecha_vencimiento": "2027-11-01",
-    "total_por_lote": 7100,
+    "total_por_lote": 6800,
     "proveedor": "LAQFAGAL",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 7100
+    "total_global": 6800
   },
   {
     "codigo": "A1004",
@@ -2856,13 +2826,13 @@
     "concentracion": "850 mg",
     "lote": "T259186",
     "fecha_vencimiento": "2027-10-01",
-    "total_por_lote": 38000,
+    "total_por_lote": 32000,
     "proveedor": "LAQFAGAL",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 38000
+    "total_global": 32000
   },
   {
     "codigo": "C0204",
@@ -2907,7 +2877,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 6440
+    "total_global": 15221
   },
   {
     "codigo": "A0308",
@@ -2922,7 +2892,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 6440
+    "total_global": 15221
   },
   {
     "codigo": "A0308",
@@ -2931,13 +2901,13 @@
     "concentracion": "10mg / 2ml",
     "lote": "230888",
     "fecha_vencimiento": "2026-08-01",
-    "total_por_lote": 2400,
+    "total_por_lote": 2200,
     "proveedor": "SAPHI",
     "porcentaje_cambio": "1",
     "tiempo_devolucion": "3 MESES ANTES",
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 6440
+    "total_global": 15221
   },
   {
     "codigo": "A0308",
@@ -2946,28 +2916,13 @@
     "concentracion": "10mg / 2ml",
     "lote": "250218",
     "fecha_vencimiento": "2028-02-01",
-    "total_por_lote": 3840,
+    "total_por_lote": 12821,
     "proveedor": "LAQFAGAL",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 6440
-  },
-  {
-    "codigo": "A0308",
-    "medicamento": "Metoclopramida",
-    "forma_farmaceutica": "Inyectable",
-    "concentracion": "10mg / 2ml",
-    "lote": "250218",
-    "fecha_vencimiento": "2028-02-01",
-    "total_por_lote": 0,
-    "proveedor": "LAQFAGAL",
-    "porcentaje_cambio": "NO APLICA",
-    "tiempo_devolucion": null,
-    "año_adquisicion": 2026,
-    "tipo_proceso": null,
-    "total_global": 6440
+    "total_global": 15221
   },
   {
     "codigo": "A0307",
@@ -2982,22 +2937,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 3000
-  },
-  {
-    "codigo": "A0307",
-    "medicamento": "Metoclopramida",
-    "forma_farmaceutica": "Comprimido",
-    "concentracion": "10 mg",
-    "lote": "C04573",
-    "fecha_vencimiento": "2030-04-01",
-    "total_por_lote": 1500,
-    "proveedor": null,
-    "porcentaje_cambio": null,
-    "tiempo_devolucion": null,
-    "año_adquisicion": null,
-    "tipo_proceso": null,
-    "total_global": 3000
+    "total_global": 1500
   },
   {
     "codigo": "L0126",
@@ -3006,13 +2946,13 @@
     "concentracion": "2.5 mg",
     "lote": "EW-01",
     "fecha_vencimiento": "2027-12-01",
-    "total_por_lote": 800,
+    "total_por_lote": 400,
     "proveedor": "LAQFAGAL",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 800
+    "total_global": 400
   },
   {
     "codigo": "G0104",
@@ -3036,28 +2976,13 @@
     "concentracion": "500 mg",
     "lote": "250811",
     "fecha_vencimiento": "2028-08-01",
-    "total_por_lote": 720,
+    "total_por_lote": 3090,
     "proveedor": "SAPHI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 720
-  },
-  {
-    "codigo": "P0107",
-    "medicamento": "Metronidazol",
-    "forma_farmaceutica": "Inyectable",
-    "concentracion": "500 mg",
-    "lote": "250811",
-    "fecha_vencimiento": "2028-08-01",
-    "total_por_lote": 0,
-    "proveedor": "SAPHI",
-    "porcentaje_cambio": "NO APLICA",
-    "tiempo_devolucion": null,
-    "año_adquisicion": 2026,
-    "tipo_proceso": null,
-    "total_global": 720
+    "total_global": 3090
   },
   {
     "codigo": "P0109",
@@ -3081,13 +3006,13 @@
     "concentracion": "15 mg/3 ml",
     "lote": "2500581",
     "fecha_vencimiento": "2027-01-01",
-    "total_por_lote": 50,
+    "total_por_lote": 0,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 150
+    "total_global": 0
   },
   {
     "codigo": "N0511",
@@ -3096,13 +3021,13 @@
     "concentracion": "15 mg/3 ml",
     "lote": "AEL25002",
     "fecha_vencimiento": "2027-03-01",
-    "total_por_lote": 100,
+    "total_por_lote": 0,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 150
+    "total_global": 0
   },
   {
     "codigo": "DAC091",
@@ -3126,13 +3051,13 @@
     "concentracion": "200  mcg",
     "lote": "M-130008",
     "fecha_vencimiento": "2026-12-01",
-    "total_por_lote": 80,
+    "total_por_lote": 40,
     "proveedor": "LAQFAGAL",
     "porcentaje_cambio": "0.15",
     "tiempo_devolucion": "3 MESES ANTES",
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 80
+    "total_global": 40
   },
   {
     "codigo": "N0705",
@@ -3147,7 +3072,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 950
+    "total_global": 850
   },
   {
     "codigo": "N0705",
@@ -3156,13 +3081,13 @@
     "concentracion": "0,5 mg/ml",
     "lote": "26193",
     "fecha_vencimiento": "2029-01-01",
-    "total_por_lote": 450,
+    "total_por_lote": 350,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 950
+    "total_global": 850
   },
   {
     "codigo": "J0151",
@@ -3201,13 +3126,13 @@
     "concentracion": "40mg",
     "lote": "240119",
     "fecha_vencimiento": "2026-12-01",
-    "total_por_lote": 1200,
+    "total_por_lote": 900,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 1200
+    "total_global": 900
   },
   {
     "codigo": "A0202",
@@ -3242,11 +3167,26 @@
   {
     "codigo": "G0209",
     "medicamento": "Oxitocina",
-    "forma_farmaceutica": null,
+    "forma_farmaceutica": "Inyectable",
     "concentracion": "5 UI/ml o 10 UI/ml",
     "lote": "240638",
     "fecha_vencimiento": "2027-06-01",
-    "total_por_lote": 300,
+    "total_por_lote": 200,
+    "proveedor": null,
+    "porcentaje_cambio": null,
+    "tiempo_devolucion": null,
+    "año_adquisicion": null,
+    "tipo_proceso": null,
+    "total_global": 300
+  },
+  {
+    "codigo": "G0209",
+    "medicamento": "Oxitocina",
+    "forma_farmaceutica": "Inyectable",
+    "concentracion": "5 UI/ml o 10 UI/ml",
+    "lote": "241224",
+    "fecha_vencimiento": "2027-12-01",
+    "total_por_lote": 100,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
@@ -3261,13 +3201,13 @@
     "concentracion": "500 mg",
     "lote": "T06360",
     "fecha_vencimiento": "2027-07-01",
-    "total_por_lote": 7000,
+    "total_por_lote": 6000,
     "proveedor": "LAQFAGAL",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 7000
+    "total_global": 6000
   },
   {
     "codigo": "N0209",
@@ -3567,22 +3507,22 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2026,
     "tipo_proceso": null,
-    "total_global": 5
+    "total_global": 57
   },
   {
     "codigo": "N0114",
     "medicamento": "Sevoflurano (Trifluorometil etil)",
     "forma_farmaceutica": "Solucion",
     "concentracion": "250 ml",
-    "lote": "2070285",
-    "fecha_vencimiento": "2028-07-01",
-    "total_por_lote": 0,
-    "proveedor": "CORMESA",
-    "porcentaje_cambio": "NO APLICA",
+    "lote": "2110255",
+    "fecha_vencimiento": "2028-11-01",
+    "total_por_lote": 52,
+    "proveedor": null,
+    "porcentaje_cambio": null,
     "tiempo_devolucion": null,
-    "año_adquisicion": 2026,
+    "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 5
+    "total_global": 57
   },
   {
     "codigo": "B0516",
@@ -3591,13 +3531,13 @@
     "concentracion": "5% (1000 ml)",
     "lote": "1030018",
     "fecha_vencimiento": "2029-12-01",
-    "total_por_lote": 420,
+    "total_por_lote": 360,
     "proveedor": "ABD",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 420
+    "total_global": 360
   },
   {
     "codigo": "B0519",
@@ -3636,13 +3576,13 @@
     "concentracion": "0,9% (1.000 ml)",
     "lote": "31732",
     "fecha_vencimiento": "2030-02-01",
-    "total_por_lote": 2052,
+    "total_por_lote": 1824,
     "proveedor": "INTI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 2052
+    "total_global": 1824
   },
   {
     "codigo": "B0525",
@@ -3666,13 +3606,13 @@
     "concentracion": "1.000 ml",
     "lote": "210495",
     "fecha_vencimiento": "2027-09-01",
-    "total_por_lote": 216,
+    "total_por_lote": 204,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 216
+    "total_global": 204
   },
   {
     "codigo": "B0532",
@@ -3681,13 +3621,13 @@
     "concentracion": "1.000 ml",
     "lote": "32179",
     "fecha_vencimiento": "2030-02-01",
-    "total_por_lote": 1248,
+    "total_por_lote": 1104,
     "proveedor": "INTI",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 1248
+    "total_global": 1104
   },
   {
     "codigo": "DSD011",
@@ -3726,13 +3666,13 @@
     "concentracion": "Sobre estéril",
     "lote": "20230925",
     "fecha_vencimiento": "2028-09-01",
-    "total_por_lote": 1250,
+    "total_por_lote": 1200,
     "proveedor": "MEDICAL STORE",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 1250
+    "total_global": 1200
   },
   {
     "codigo": "DSD016",
@@ -3741,13 +3681,13 @@
     "concentracion": "Sobre estéril",
     "lote": "20241118",
     "fecha_vencimiento": "2029-10-01",
-    "total_por_lote": 2150,
+    "total_por_lote": 2100,
     "proveedor": "MEDICAL STORE",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 2150
+    "total_global": 2100
   },
   {
     "codigo": "DSD026",
@@ -3756,13 +3696,13 @@
     "concentracion": "sobre esteril",
     "lote": "2210012368",
     "fecha_vencimiento": "2027-10-01",
-    "total_por_lote": 210,
+    "total_por_lote": 170,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 710
+    "total_global": 670
   },
   {
     "codigo": "DSD026",
@@ -3777,7 +3717,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 710
+    "total_global": 670
   },
   {
     "codigo": "DSD025",
@@ -3786,26 +3726,11 @@
     "concentracion": "sobre esteril",
     "lote": "KMT20220525",
     "fecha_vencimiento": "2027-05-01",
-    "total_por_lote": 20,
+    "total_por_lote": 24,
     "proveedor": "MEDICAL STORE",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
-    "tipo_proceso": null,
-    "total_global": 24
-  },
-  {
-    "codigo": "DSD025",
-    "medicamento": "Sonda Foley",
-    "forma_farmaceutica": "Nº14 Siliconizada 2 vias",
-    "concentracion": "sobre esteril",
-    "lote": null,
-    "fecha_vencimiento": "2029-02-01",
-    "total_por_lote": 4,
-    "proveedor": null,
-    "porcentaje_cambio": null,
-    "tiempo_devolucion": null,
-    "año_adquisicion": null,
     "tipo_proceso": null,
     "total_global": 24
   },
@@ -3906,13 +3831,13 @@
     "concentracion": "0.1",
     "lote": "28806",
     "fecha_vencimiento": "2026-08-01",
-    "total_por_lote": 100,
+    "total_por_lote": 50,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 150
+    "total_global": 100
   },
   {
     "codigo": "B0533",
@@ -3927,7 +3852,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 150
+    "total_global": 100
   },
   {
     "codigo": "B0308",
@@ -3936,13 +3861,13 @@
     "concentracion": "200 mg + 0,5 mg + 150 mg",
     "lote": "240155",
     "fecha_vencimiento": "2027-01-01",
-    "total_por_lote": 3000,
+    "total_por_lote": 1000,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 3000
+    "total_global": 1000
   },
   {
     "codigo": "R0701",
@@ -4071,13 +3996,13 @@
     "concentracion": "sobre esteril",
     "lote": "2030995",
     "fecha_vencimiento": "2030-03-01",
-    "total_por_lote": 72,
+    "total_por_lote": 0,
     "proveedor": "INFARLAB",
     "porcentaje_cambio": "NO APLICA",
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 792
+    "total_global": 720
   },
   {
     "codigo": "DSC054",
@@ -4092,7 +4017,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 792
+    "total_global": 720
   },
   {
     "codigo": "DSC054",
@@ -4107,7 +4032,7 @@
     "tiempo_devolucion": null,
     "año_adquisicion": 2025,
     "tipo_proceso": null,
-    "total_global": 792
+    "total_global": 720
   },
   {
     "codigo": "DSC011",
@@ -4191,13 +4116,13 @@
     "concentracion": "100 mg/2 ml",
     "lote": "25974",
     "fecha_vencimiento": "2027-01-01",
-    "total_por_lote": 55,
+    "total_por_lote": 0,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 800
+    "total_global": 700
   },
   {
     "codigo": "N0214",
@@ -4206,13 +4131,13 @@
     "concentracion": "100 mg/2 ml",
     "lote": "27669",
     "fecha_vencimiento": "2027-05-01",
-    "total_por_lote": 745,
+    "total_por_lote": 700,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 800
+    "total_global": 700
   },
   {
     "codigo": "DTO044",
@@ -4356,12 +4281,12 @@
     "concentracion": "20 mg/5 ml, (100 ml)",
     "lote": "240102",
     "fecha_vencimiento": "2027-01-01",
-    "total_por_lote": 250,
+    "total_por_lote": 240,
     "proveedor": null,
     "porcentaje_cambio": null,
     "tiempo_devolucion": null,
     "año_adquisicion": null,
     "tipo_proceso": null,
-    "total_global": 250
+    "total_global": 240
   }
 ]
