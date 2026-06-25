@@ -1,4 +1,4 @@
-const CACHE_NAME = 'farmacheck-v18';
+const CACHE_NAME = 'farmacheck-v19';
 
 const STATIC_ASSETS = [
   './',
@@ -25,6 +25,10 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
+
+  // Ignorar requests no-GET (POST de Firebase Auth, etc.) y dominios externos
+  if (event.request.method !== 'GET') return;
+  if (!url.origin.includes('github.io') && !url.origin.includes('googleapis.com') && !url.origin.includes('gstatic.com')) return;
 
   if (url.pathname.endsWith('farmacheck.json')) {
     event.respondWith(
